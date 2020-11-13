@@ -3,8 +3,19 @@
 // example, to import the interface below do:
 //
 // import User from 'path/to/interfaces';
+import { BaseCSSProperties } from '@material-ui/core/styles/withStyles';
 
 export type User = {
   id: number
   name: string
 }
+
+export interface StyleProps {
+  root: BaseCSSProperties,
+  // linkText: string,
+}
+
+export interface div {
+  clicked: React.MouseEventHandler<HTMLDivElement>;
+}
+export type PropsClasses = Record<keyof StyleProps, string>

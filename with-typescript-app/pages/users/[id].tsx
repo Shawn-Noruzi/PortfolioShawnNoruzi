@@ -5,6 +5,9 @@ import { sampleUserData } from '../../utils/sample-data'
 import Layout from '../../components/Layout'
 import ListDetail from '../../components/ListDetail'
 
+
+//this page gets rendered like .com/users/101 where 101 is the ID of the user you clicked on. 
+//There's some data validating + data fetching here that happens during build time 
 type Props = {
   item?: User
   errors?: string
@@ -13,7 +16,7 @@ type Props = {
 const StaticPropsDetail = ({ item, errors }: Props) => {
   if (errors) {
     return (
-      <Layout title="Error | Next.js + TypeScript Example">
+      <Layout title="Error | Noruzi | Front End Developer">
         <p>
           <span style={{ color: 'red' }}>Error:</span> {errors}
         </p>
@@ -25,7 +28,7 @@ const StaticPropsDetail = ({ item, errors }: Props) => {
     <Layout
       title={`${
         item ? item.name : 'User Detail'
-      } | Next.js + TypeScript Example`}
+      } | Noruzi | Front End Developer`}
     >
       {item && <ListDetail item={item} />}
     </Layout>
