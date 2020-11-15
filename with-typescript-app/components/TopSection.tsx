@@ -7,14 +7,15 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     backgroundImage: {
       background:
-        "linear-gradient( rgba(0, 0, 200 , 0.5), rgba(255,0,200, 0.4) ), url(/static/images/brownbgM.png)",
+        "linear-gradient( rgba(0, 0, 200 , 0.5), rgb(0 102 255 / 40%) ), url(/static/images/brownbgM.png)",
+        
       height: "100vh",
       backgroundPosition: "right",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       [theme.breakpoints.up("sm")]: {
         background:
-          "linear-gradient( rgba(0, 0, 200 , 0.5), rgba(255,0,200, 0.4) ), url(/static/images/brownbg.png)",
+          "linear-gradient( rgba(0, 0, 200 , 0.5), rgb(0 102 255 / 40%) ), url(/static/images/brownbg.png)",
         height: "100vh",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

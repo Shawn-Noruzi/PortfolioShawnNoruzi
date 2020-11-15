@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Link from "next/link";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import MenuIcon from "@material-ui/icons/Menu";
-
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -119,14 +118,19 @@ const useStyles = makeStyles((theme: Theme) =>
     menu: {
       "& .MuiPaper-root": {
         width: "118px",
-        backgroundColor: "#2A2683",
+        backgroundColor: "#be9bde",
       },
+    },
+    appBar: {
+      background: "transparent",
+      boxShadow: "none",
     },
   })
 );
 
 export default function PrimarySearchAppBar() {
   const classes = useStyles();
+  const Trigger = useScrollTrigger();
   const [activeTab, setActiveTab] = useState({
     about: false,
     portfolio: false,
@@ -214,7 +218,11 @@ export default function PrimarySearchAppBar() {
   return (
     <div className={classes.grow}>
       <AppBar
-        style={{ background: "transparent", boxShadow: "none" }}
+        className={classes.appBar}
+        style={{
+          backgroundColor: Trigger ? "#312783" : "transparent",
+          transition: "all 0.3s ease-in-out",
+        }}
         position="fixed"
       >
         <Toolbar className={classes.gutters}>

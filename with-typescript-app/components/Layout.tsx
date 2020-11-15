@@ -1,6 +1,9 @@
 import React, { ReactNode } from "react";
 import TopSection from "./TopSection";
 import Head from "next/head";
+import About from './AboutMe';
+import Contact from './ContactMe';
+import Portfolio from './Portfolio';
 
 type Props = {
   children?: ReactNode;
@@ -21,6 +24,9 @@ const Layout = ({
       </Head>
       <header>
         <TopSection />
+        <About/>
+        <Portfolio/>
+        <Contact/>
       </header>
       {children}
     </div>
