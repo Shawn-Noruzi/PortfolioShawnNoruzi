@@ -1,263 +1,146 @@
-import React from "react";
-import cx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
+import React, { useState } from "react";
+import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import TextInfoContent from "@mui-treasury/components/content/textInfo";
-import { useBlogTextInfoContentStyles } from "@mui-treasury/styles/textInfoContent/blog";
-import { useOverShadowStyles } from "@mui-treasury/styles/shadow/over";
+import PortfolioCard from "./PortfolioCard";
 
-const useStyles = makeStyles(({ breakpoints, spacing }) => ({
-  root: {
-    background: `#312783`,
-    marginLeft: "150px",
-    marginBottom: "40px",
-    width: "1200px",
-    borderRadius: spacing(2), // 16px
-    transition: "0.3s",
-    boxShadow: "0px 14px 80px rgba(34, 35, 58, 0.2)",
-    position: "relative",
-    overflow: "initial",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    paddingBottom: spacing(2),
-    [breakpoints.up("md")]: {
-      flexDirection: "row",
-      paddingTop: spacing(2),
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    portfolioContainer: {},
+    buttonsContainer: {
+      margin: `0 auto`,
+      width: `fit-content`,
+      marginBottom: `50px`,
     },
-  },
-  rightRoot: {
-    background: `#312783`,
-    marginLeft: "450px",
-    marginBottom: "40px",
-    width: "1200px",
-    borderRadius: spacing(2), // 16px
-    transition: "0.3s",
-    boxShadow: "0px 14px 80px rgba(34, 35, 58, 0.2)",
-    position: "relative",
-    overflow: "initial",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    paddingBottom: spacing(2),
-    [breakpoints.up("md")]: {
-      flexDirection: "row",
-      paddingTop: spacing(2),
-    },
-  },
-  media: {
-    boxShadow: `5px 5px #00000063`,
-    width: "88%",
-    marginLeft: "auto",
-    marginRight: "auto",
-    marginTop: spacing(-3),
-    height: 0,
-    paddingBottom: "48%",
-    borderRadius: spacing(2),
-    backgroundColor: "#fff",
-    position: "relative",
-    [breakpoints.up("md")]: {
-      width: "100%",
-      marginLeft: spacing(-3),
-      marginTop: 0,
-      transform: "translateX(-8px)",
-    },
-    "&:after": {
-      content: '" "',
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      backgroundImage: "linear-gradient(147deg, #ffffff00 0%, #c496ea47 74%)",
-      borderRadius: spacing(2), // 16
-      opacity: 0.5,
-    },
-  },
-  buttonStyles: {
-    background: `linear-gradient(45deg, #f342ff, #00faff9c)`,
-    boxShadow: `0px 4px 32px rgb(56 136 252 / 61%)`,
-  },
-  content: {
-    padding: 24,
-  },
-  cta: {
-    marginTop: 24,
-    textTransform: "initial",
-  },
-}));
+    button: {
+      color: `white`,
+      background: `rgb(18 72 128 / 52%)`,
+      margin: `10px`,
+      " &:hover": {
+        background: `rgba(18, 67, 117)`,
 
-export const BlogCardDemo = React.memo(function BlogCard() {
-  const styles = useStyles();
-  const {
-    button: buttonStyles,
-    ...contentStyles
-  } = useBlogTextInfoContentStyles();
-  const shadowStyles = useOverShadowStyles();
+        boxShadow: `2px 4px 10px 0px #888888`,
+      },
+    },
+    isActiveButton: {
+      color: `white`,
+      background: `rgba(18, 67, 117, 0.90)`,
+      margin: `10px`,
+      " &:hover": {
+        boxShadow: `2px 4px 10px 0px #888888`,
+        background: `rgba(18, 67, 117, 0.90)`,
+      },
+    },
+    bar: {
+      color: `#4777ff`,
+      width: ` 50px`,
+      margin: ` 0 auto`,
+      borderBottom: `3px solid`,
+      marginBottom: `50px`,
+    },
+    title: {
+      font: `24px 'ProximaNovaSbold', Arial`,
+      letterSpacing: `5px`,
+      color: ` #333`,
+      margin: `0 auto`,
+      width: "fit-content",
+      marginTop: `50px`,
+      marginBottom: `20px`,
+    },
+  })
+);
+
+const Portfolio = () => {
+  const [skills, setSkills] = useState({
+    all: true,
+    web: false,
+    responsive: false,
+    fullstack: false,
+    restful: false,
+  });
+  const classes = useStyles();
   return (
-    <div
-      style={{
-        display: "flex",
-        background: "rgb(165 174 236)",
-        paddingTop: '20px'
-      }}
-    >
-      <p
-        style={{
-          color: "white",
-          height: "30px",
-          fontSize: "larger",
-          marginTop: `50px`,
-          fontFamily: `Roboto,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif`,
-          fontWeight: `400`,
-          position: 'absolute',
-          left: `45%`,
-          borderBottom: `2.5px solid #617ac1`,
-        }}
-      >
-        Portfolio
-      </p>
-      <div
-        style={{
-          paddingTop: '20px',
-          marginTop: "100px",
-          marginBottom: "100px",
-          display: "flex",
-          flexWrap: "wrap",
-        }}
-      >
-        <Card className={cx(styles.root, shadowStyles.root)}>
-          <CardMedia
-            className={styles.media}
-            image={"/static/images/GitPay.png"}
-          />
-          <CardContent style={{ width: "500px" }}>
-            <TextInfoContent
-              style={{
-                "&.heading": {
-                  color: "white",
-                },
-              }}
-              classes={contentStyles}
-              overline={"2020"}
-              heading={"GitPay"}
-              body={
-                "Collaborate, learn and receive payments by solving issues from projects"
-              }
-            />
-            <Button
-              style={{
-                background: `linear-gradient(45deg, #f342ff, #00faff9c)`,
-                boxShadow: `0px 4px 32px rgb(56 136 252 / 61%)`,
-              }}
-              className={buttonStyles}
-            >
-              <a
-                style={{ textDecoration: "none", color: "white" }}
-                href="https://gitpay.me/#/"
-              >
-                View Site
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
-        <Card className={cx(styles.rightRoot, shadowStyles.root)}>
-          <CardMedia
-            className={styles.media}
-            image={"/static/images/PlaceSpeak.png"}
-          />
-          <CardContent style={{ width: "500px" }}>
-            <TextInfoContent
-              classes={contentStyles}
-              overline={"2019-2020"}
-              heading={"PlaceSpeak"}
-              body={
-                "PlaceSpeak is a location-based community consultation platform. Claim your place. Speak your mind. Influence the outcome."
-              }
-            />
-            <Button
-              style={{
-                background: `linear-gradient(45deg, #f342ff, #00faff9c)`,
-                boxShadow: `0px 4px 32px rgb(56 136 252 / 61%)`,
-              }}
-              className={buttonStyles}
-            >
-              <a
-                style={{ textDecoration: "none", color: "white" }}
-                href="https://www.placespeak.com/en/"
-              >
-                View Site
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
-
-        <Card className={cx(styles.root, shadowStyles.root)}>
-          <CardMedia
-            className={styles.media}
-            image={"/static/images/Mentor.png"}
-          />
-          <CardContent style={{ width: "500px" }}>
-            <TextInfoContent
-              style={{ color: "white" }}
-              classes={contentStyles}
-              overline={"2020"}
-              heading={"Open Mentorship"}
-              body={
-                "A tinder-like mentor finding application for new programmers."
-              }
-            />
-            <Button
-              style={{
-                background: `linear-gradient(45deg, #f342ff, #00faff9c)`,
-                boxShadow: `0px 4px 32px rgb(56 136 252 / 61%)`,
-              }}
-              className={buttonStyles}
-            >
-              <a
-                style={{ textDecoration: "none", color: "white" }}
-                href="http://www.openmentorship.com/#home"
-              >
-                View Site
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
-        <Card className={cx(styles.rightRoot, shadowStyles.root)}>
-          <CardMedia
-            className={styles.media}
-            image={"/static/images/Portfolio.PNG"}
-          />
-          <CardContent style={{ width: "500px" }}>
-            <TextInfoContent
-              style={{ color: "white" }}
-              classes={contentStyles}
-              overline={"2020"}
-              heading={"Custom Portfolio Design"}
-              body={"A Custom Portfolio with slides and animations"}
-            />
-            <Button
-              style={{
-                background: `linear-gradient(45deg, #f342ff, #00faff9c)`,
-                boxShadow: `0px 4px 32px rgb(56 136 252 / 61%)`,
-              }}
-              className={buttonStyles}
-            >
-              <a
-                style={{ textDecoration: "none", color: "white" }}
-                href="https://noruzi.vercel.app/"
-              >
-                View Site
-              </a>
-            </Button>
-          </CardContent>
-        </Card>
+    <div>
+      <p className={classes.title}>My Work</p>
+      <div className={classes.bar} />
+      <div className={classes.buttonsContainer}>
+        <Button
+          onClick={() =>
+            setSkills({
+              all: true,
+              web: true,
+              responsive: true,
+              fullstack: true,
+              restful: true,
+            })
+          }
+          className={skills.all ? classes.isActiveButton : classes.button}
+        >
+          All
+        </Button>
+        <Button
+          onClick={() =>
+            setSkills({
+              all: false,
+              web: true,
+              responsive: false,
+              fullstack: false,
+              restful: false,
+            })
+          }
+          className={skills.web ? classes.isActiveButton : classes.button}
+        >
+          Web
+        </Button>
+        <Button
+          onClick={() =>
+            setSkills({
+              all: false,
+              web: false,
+              responsive: true,
+              fullstack: false,
+              restful: false,
+            })
+          }
+          className={
+            skills.responsive ? classes.isActiveButton : classes.button
+          }
+        >
+          Responsive
+        </Button>
+        <Button
+          onClick={() =>
+            setSkills({
+              all: false,
+              web: false,
+              responsive: false,
+              fullstack: true,
+              restful: false,
+            })
+          }
+          className={skills.fullstack ? classes.isActiveButton : classes.button}
+        >
+          FullStack
+        </Button>
+        <Button
+          onClick={() =>
+            setSkills({
+              all: false,
+              web: false,
+              responsive: false,
+              fullstack: false,
+              restful: true,
+            })
+          }
+          className={skills.restful ? classes.isActiveButton : classes.button}
+        >
+          Restful
+        </Button>
+      </div>
+      <div className={classes.portfolioContainer}> 
+        <PortfolioCard skills={skills} />
       </div>
     </div>
   );
-});
+};
 
-export default BlogCardDemo;
+export default Portfolio;

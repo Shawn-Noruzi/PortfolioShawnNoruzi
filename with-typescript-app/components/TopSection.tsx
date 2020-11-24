@@ -1,21 +1,21 @@
 import React from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import NavBar from "./navbar";
-// import background from '../public/static/'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     backgroundImage: {
       background:
-        "linear-gradient( rgba(0, 0, 200 , 0.5), rgb(0 102 255 / 40%) ), url(/static/images/brownbgM.png)",
-        
+        "linear-gradient( rgb(196 181 255 / 56%), rgb(228 146 222 / 60%)), url(/static/images/brownbgM.png)",
+
       height: "100vh",
       backgroundPosition: "right",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       [theme.breakpoints.up("sm")]: {
         background:
-          "linear-gradient( rgba(0, 0, 200 , 0.5), rgb(0 102 255 / 40%) ), url(/static/images/brownbg.png)",
+        
+          "linear-gradient(rgb(196 181 255 / 56%), rgb(146 202 228 / 60%)), url(/static/images/mountain.jpg)",
         height: "100vh",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -26,41 +26,45 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "32px",
       margin: "0 auto",
       letterSpacing: "10px",
-      marginBottom: "10px",
       color: "white",
+      paddingTop: `3px`,
       fontFamily:
         "Roboto,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
       [theme.breakpoints.up("sm")]: {
         letterSpacing: "10px",
       },
     },
+    subTitle:{
+      color:'white',
+      textAlign: `center`,
+      fontFamily: `ProximaNovaExCn-Semibold, Arial`,
+    },
+    nameContainer:{
+      border: `7px solid white`,
+      textAlign: `center`,
+      height: `110px`,
+      background: `rgb(0 0 0 / 14%)`,
+      fontFamily: `ProximaNovaExCn-Semibold, Arial`,
+  
+    },
     TopSectionText: {
-      width: "300px",
-      marginLeft: "20px",
-      position: "absolute",
-      top: "15%",
-
+      width: "325px",
+      margin: '0 auto',
+      paddingTop: `359px`,
       [theme.breakpoints.up("sm")]: {
-        width: "400px",
-        top: "40%",
-        right: "40%",
-        position: "absolute",
       },
       [theme.breakpoints.up("md")]: {
-        width: "500px",
-        top: "40%",
-        right: "50%",
-        position: "absolute",
+
       },
     },
     TopSectionBar: {
       borderBottom: " white solid",
       marginBottom: "10px",
       [theme.breakpoints.down("md")]: {
-        width: '65%'
+        width: "65%",
       },
       [theme.breakpoints.down("sm")]: {
-        width: '90%'
+        width: "90%",
       },
     },
     // sectionMobile: {
@@ -72,23 +76,20 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const TopSection = () => {
+const TopSection = (props: any) => {
   const classes = useStyles();
   return (
     <div className={classes.backgroundImage}>
-      <NavBar />
+      <NavBar props={props} />
       <div className={classes.TopSectionText}>
-        <p className={classes.title}>Front End Engineer</p>
-        <div className={classes.TopSectionBar} />
-        <p className={classes.title}>UX + Visual Designer</p>
-        <p className={classes.title}></p>
+        <div className={classes.nameContainer} >
+          <p style={{marginTop:`8px`}} className={classes.title}>SHAWN</p>
+          <p className={classes.title}>NORUZI</p>
+        </div>
+        <p className={classes.subTitle}> Front End Developer |  UX and UI Designer </p>
       </div>
     </div>
   );
 };
 
 export default TopSection;
-
-//top nav bar needs to be extended half during mobile
-// bottom footer needs contacs
-//middle needs work exp with singulars

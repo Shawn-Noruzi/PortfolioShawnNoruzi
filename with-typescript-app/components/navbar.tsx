@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
+
 import Link from "next/link";
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
-import MenuIcon from "@material-ui/icons/Menu";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import PhoneIcon from "@material-ui/icons/Phone";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -14,11 +13,10 @@ const useStyles = makeStyles((theme: Theme) =>
       "html, body": {
         margin: 0,
         padding: 0,
+        scrollBehavior: "smooth",
       },
     },
-    grow: {
-      flexGrow: 1,
-    },
+
     menuButton: {
       marginRight: theme.spacing(10),
     },
@@ -39,52 +37,31 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
     linkText: {
-      textDecoration: "none",
-      color: "white",
-      fontWeight: "normal",
-      fontSize: "larger",
-      marginLeft: "65px",
-      fontFamily:
-        "Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
-    },
-    left: {
+      marginBottom: `20px`,
       position: "relative",
       textDecoration: "none",
       color: "white",
       fontWeight: "normal",
       fontSize: "larger",
-      marginLeft: "65px",
       fontFamily:
         "Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
-
-      "&:before": {
-        content: '""',
-        position: "absolute",
-        width: "0",
-        height: "2px",
-        bottom: "0",
-        left: "0",
-        backgroundColor: "white",
-        visibility: "hidden",
-        transition: "all 0.3s ease-in-out",
-      },
       "&:hover": {
-        "&:before": {
-          visibility: "visible",
-          width: "100%",
-        },
+        transition: "0.3s",
+        fontSize: `23px`,
       },
       [theme.breakpoints.down("sm")]: {
         marginLeft: "5px",
       },
     },
     activeLink: {
+      marginBottom: `20px`,
       position: "relative",
       textDecoration: "none",
       color: "white",
       fontWeight: "bolder",
-      fontSize: "larger",
-      marginLeft: "65px",
+      transition: "0.3s",
+      fontSize: `23px`,
+
       fontFamily:
         "Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
       [theme.breakpoints.down("md")]: {
@@ -107,6 +84,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "none",
       [theme.breakpoints.up("md")]: {
         display: "flex",
+        margin: `0 auto`,
       },
     },
     sectionMobile: {
@@ -122,165 +100,148 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     appBar: {
-      background: "transparent",
-      boxShadow: "none",
+      position: `fixed`,
+      margin: `20px`,
+      right: "0",
+    },
+    overlay: {
+      height: `0%`,
+      width: `100%`,
+      position: `fixed`,
+      zIndex: -1,
+      left: `0`,
+      top: `0`,
+
+      backgroundColor: `rgb(65 199 210 / 90%)`,
+      overflowX: `hidden`,
+      overflowY: `hidden`,
+
+      transition: `0.5s`,
+    },
+    overlayContent: {
+      position: `relative`,
+      top: `25%`,
+      width: `100%`,
+      textAlign: `center`,
+      marginTop: ` 30px`,
+      display: `flex`,
+      flexDirection: `column`,
     },
   })
 );
 
-export default function PrimarySearchAppBar() {
+export default function Navbar(props: any) {
   const classes = useStyles();
-  const Trigger = useScrollTrigger();
-  const [activeTab, setActiveTab] = useState({
-    about: false,
-    portfolio: false,
-    contact: false,
-  });
-  const [
-    mobileMoreAnchorEl,
-    setMobileMoreAnchorEl,
-  ] = React.useState<null | HTMLElement>(null);
+  const [activeTab, setActiveTab] = useState({ about: false, portfolio: false, contact: false });
+  useEffect(() => {
+    setActiveTab({
+      about: props.props.isFirstVisible, portfolio: props.props.isSecondVisible, contact: props.props.isThirdVisible,
+    });
 
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  }, [props]);
 
-  const tabHandler = (value: string) => {
-    if (value == "about") {
-      setActiveTab({ about: true, portfolio: false, contact: false });
-    } else if (value == "portfolio") {
-      setActiveTab({ about: false, portfolio: true, contact: false });
-    } else if (value == "contact") {
-      setActiveTab({ about: false, portfolio: false, contact: true });
+  const [menu, setMenu] = useState(false);
+
+  const openMenu = () => {
+    setMenu(!menu);
+    if (menu == true) {
+      document.getElementById("myNav").style.height = "0%";
+    } else {
+      document.getElementById("myNav").style.height = "100%";
     }
   };
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
-
-  //When Mobile
-  const renderMobileMenu = (
-    <Menu
-      className={classes.menu}
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <Link href="/">
-          <a
-            onClick={() => tabHandler("about")}
-            className={
-              activeTab.about == true ? classes.activeLink : classes.left
-            }
-          >
-            About
-          </a>
-        </Link>
-      </MenuItem>
-      <MenuItem>
-        <Link href="/">
-          <a
-            onClick={() => tabHandler("portfolio")}
-            className={
-              activeTab.portfolio == true ? classes.activeLink : classes.left
-            }
-          >
-            Portfolio
-          </a>
-        </Link>
-      </MenuItem>
-      <MenuItem>
-        <Link href="/">
-          <a
-            onClick={() => tabHandler("contact")}
-            className={
-              activeTab.contact == true ? classes.activeLink : classes.left
-            }
-          >
-            Contact
-          </a>
-        </Link>
-      </MenuItem>
-    </Menu>
-  );
-
-  //Desktop
   return (
-    <div className={classes.grow}>
-      <AppBar
-        className={classes.appBar}
-        style={{
-          backgroundColor: Trigger ? "#312783" : "transparent",
-          transition: "all 0.3s ease-in-out",
-        }}
-        position="fixed"
+    <div className={classes.appBar}>
+      <button
+        onClick={() => openMenu()}
+        className={
+          menu
+            ? "hamburger hamburger--collapse is-active"
+            : "hamburger hamburger--collapse"
+        }
+        type="button"
       >
-        <Toolbar className={classes.gutters}>
-          <Link href="/">
-            <a className={classes.title}>Shawn Noruzi </a>
-          </Link>
+        <span className="hamburger-box">
+          <span className="hamburger-inner"></span>
+        </span>
+      </button>
 
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <div>
-              <Link href="/">
-                <a
-                  onClick={() => tabHandler("about")}
-                  className={
-                    activeTab.about == true ? classes.activeLink : classes.left
-                  }
-                >
-                  About
-                </a>
-              </Link>
-              <Link href="/">
-                <a
-                  onClick={() => tabHandler("portfolio")}
-                  className={
-                    activeTab.portfolio == true
-                      ? classes.activeLink
-                      : classes.left
-                  }
-                >
-                  Portfolio
-                </a>
-              </Link>
-              <Link href="/">
-                <a
-                  onClick={() => tabHandler("contact")}
-                  className={
-                    activeTab.contact == true
-                      ? classes.activeLink
-                      : classes.left
-                  }
-                >
-                  Contact
-                </a>
-              </Link>
-            </div>
+      <div id="myNav" className={classes.overlay}>
+        <div className={classes.overlayContent}>
+          <Link href="#About" scroll={false}>
+            <a
+              onClick={() =>
+                setActiveTab({ about: true, portfolio: false, contact: false })
+              }
+              className={
+                activeTab.about == true
+                  ? classes.activeLink
+                  : classes.linkText
+              }
+            >
+              About
+            </a>
+          </Link>
+          <Link href="#Portfolio" scroll={false}>
+            <a
+              onClick={() =>
+                setActiveTab({ about: false, portfolio: true, contact: false })
+              }
+              className={
+                activeTab.portfolio == true
+                  ? classes.activeLink
+                  : classes.linkText
+              }
+            >
+              Portfolio
+            </a>
+          </Link>
+          <Link
+            href="#Contact"
+            scroll={false}
+          >
+            <a
+              onClick={() =>
+                setActiveTab({ about: false, portfolio: false, contact: true })
+              }
+              className={
+                activeTab.contact == true
+                  ? classes.activeLink
+                  : classes.linkText
+              }
+            >
+              Contact
+            </a>
+          </Link>
+          <div
+            style={{
+              margin: "0 auto",
+              textAlign: "center",
+              marginTop: "20%",
+            }}
+          >
+            <a style={{ margin: "20px" }} href="mailto:Shawn.Noruzi@gmail.com">
+              <MailOutlineIcon style={{ fill: "white" }} fontSize="large" />
+            </a>
+            <a style={{ margin: "20px" }} href="tel:604-704-5402">
+              <PhoneIcon style={{ fill: "white" }} fontSize="large" />
+            </a>
+            <a
+              style={{ margin: "20px" }}
+              href="https://www.linkedin.com/in/shawn-noruzi/"
+            >
+              <LinkedInIcon style={{ fill: "white" }} fontSize="large" />
+            </a>
+            <a
+              style={{ margin: "20px" }}
+              href="https://github.com/Shawn-Noruzi"
+            >
+              <GitHubIcon style={{ fill: "white" }} fontSize="large" />
+            </a>
           </div>
-          <div className={classes.sectionMobile}>
-            <MenuIcon
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            ></MenuIcon>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
+        </div>
+      </div>
     </div>
   );
 }
