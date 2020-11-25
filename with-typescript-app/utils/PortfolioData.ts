@@ -71,7 +71,7 @@ export const jobData: PortfolioData = {
       restful: true,
     },
     title: "GitPay",
-    catchLine: "Bounty website for developers",
+    catchLine: "Bounty website for developers to find paid work",
     role: "Front End Engineer",
     jobDescription: [
       "Reduced user flow issues through the improvement of UX/UI which increased CTR by 50% through the creation of a landing page using React, JavaScript and Bootstrap/CSS",
@@ -94,7 +94,7 @@ export const jobData: PortfolioData = {
       restful: true,
     },
     title: "PlaceSpeak",
-    catchLine: "Geolocation based constituent consulting app",
+    catchLine: "Geolocation based constituent consulting",
     role: "Front End Engineer",
     jobDescription: [
       "Overhauled all user interfaces which increased site traffic by more than 60%  using React, Redux, Bootstrap/CSS, JavaScript, and JQuery ",
@@ -118,7 +118,7 @@ export const jobData: PortfolioData = {
     },
     title: "Open Mentorship",
     catchLine:
-      "Find the Mentor you always wanted on this Tinder-Like mentor finding app.",
+      "Tinder-Like mentor finding app.",
     role: "Front End Engineer",
     jobDescription: [
       "Developed a mentor-mentee matching application for engineers with a projected reach of 100,000 initial users using React, Styled-Components/Material-UI/CSS, JavaScript, and Axios",
@@ -138,8 +138,8 @@ export const jobData: PortfolioData = {
       fullstack: false,
       restful: true,
     },
-    title: "Custom Slider Portfolio",
-    catchLine: "Innovative new way to present portfolio data",
+    title: "Slider Portfolio",
+    catchLine: "Innovative way to present portfolio data",
     role: "Front End Engineer",
     jobDescription: [
       "Developed a 'slide' based visual presentation using AwesomeSlider, Next.js, React, Javascript, Material-UI.",

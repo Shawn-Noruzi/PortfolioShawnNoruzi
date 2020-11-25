@@ -5,11 +5,13 @@ import PortfolioCard from "./PortfolioCard";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    portfolioContainer: {},
+    portfolioContainer: {
+      display: `flex`,
+      flexWrap: `wrap`,
+    },
     buttonsContainer: {
       margin: `0 auto`,
       width: `fit-content`,
-      marginBottom: `50px`,
     },
     button: {
       color: `white`,
@@ -43,7 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
       color: ` #333`,
       margin: `0 auto`,
       width: "fit-content",
-      marginTop: `50px`,
+      marginTop: `80px`,
       marginBottom: `20px`,
     },
   })
@@ -58,6 +60,15 @@ const Portfolio = () => {
     restful: false,
   });
   const classes = useStyles();
+  const [checked, setChecked] = React.useState(true);
+  function handleChange(props: any) {
+    setChecked(false);
+    setTimeout(function () {
+      setChecked((prev) => !prev);
+    }, 500);
+
+    setSkills(props);
+  }
   return (
     <div>
       <p className={classes.title}>My Work</p>
@@ -65,7 +76,7 @@ const Portfolio = () => {
       <div className={classes.buttonsContainer}>
         <Button
           onClick={() =>
-            setSkills({
+            handleChange({
               all: true,
               web: true,
               responsive: true,
@@ -79,7 +90,7 @@ const Portfolio = () => {
         </Button>
         <Button
           onClick={() =>
-            setSkills({
+            handleChange({
               all: false,
               web: true,
               responsive: false,
@@ -93,7 +104,7 @@ const Portfolio = () => {
         </Button>
         <Button
           onClick={() =>
-            setSkills({
+            handleChange({
               all: false,
               web: false,
               responsive: true,
@@ -109,7 +120,7 @@ const Portfolio = () => {
         </Button>
         <Button
           onClick={() =>
-            setSkills({
+            handleChange({
               all: false,
               web: false,
               responsive: false,
@@ -136,8 +147,8 @@ const Portfolio = () => {
           Restful
         </Button>
       </div>
-      <div className={classes.portfolioContainer}> 
-        <PortfolioCard skills={skills} />
+      <div className={classes.portfolioContainer}>
+        <PortfolioCard skills={skills} checked={checked} />
       </div>
     </div>
   );
