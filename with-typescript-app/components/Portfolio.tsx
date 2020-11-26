@@ -6,7 +6,7 @@ import PortfolioCard from "./PortfolioCard";
 import VizSensor from "react-visibility-sensor";
 import Grow from '@material-ui/core/Grow';
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     portfolioContainer: {
       display: `flex`,

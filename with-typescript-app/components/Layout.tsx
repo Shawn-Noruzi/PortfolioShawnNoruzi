@@ -13,7 +13,7 @@ type Props = {
 };
 
 const Layout = ({
-  children,
+
   title = "Noruzi | Front End Developer",
 }: Props) => {
   const [isFirstVisible, firstRef] = useVisibility<HTMLDivElement>(-100);
