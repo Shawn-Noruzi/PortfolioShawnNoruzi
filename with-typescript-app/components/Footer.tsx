@@ -1,12 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import PhoneIcon from "@material-ui/icons/Phone";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import { Link } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
