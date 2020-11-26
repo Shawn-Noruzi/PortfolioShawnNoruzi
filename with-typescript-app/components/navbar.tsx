@@ -151,9 +151,11 @@ export default function Navbar(props: any) {
   const openMenu = () => {
     setMenu(!menu);
     if (menu == true) {
-      document.getElementById("myNav").style.height = "0%";
+      const lsOutput = document.getElementById("myNav")!;
+      lsOutput.style.height = "0%";
     } else {
-      document.getElementById("myNav").style.height = "100%";
+      const lsOutput = document.getElementById("myNav")!;
+      lsOutput.style.height = "100%";
     }
   };
 
