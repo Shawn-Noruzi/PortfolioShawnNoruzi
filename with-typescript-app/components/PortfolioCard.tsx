@@ -69,11 +69,11 @@ const useStyles = makeStyles((theme: Theme) =>
 const PortfolioCard = (props: any) => {
   const classes = useStyles();
 
-  return Object.entries(jobData).map((key, index) => {
+  return (<> {Object.entries(jobData).map((key, index) => {
     if (key[1].tags.all == true && props.skills.all == true) {
       return (
-        <Grow in={props.checked}>
-          <div className={classes.portfolioCard} key={index}>
+        <Grow in={props.checked}  key={index}>
+          <div className={classes.portfolioCard}>
             <div className={classes.picture}>
               <img
                 className={classes.img}
@@ -97,8 +97,8 @@ const PortfolioCard = (props: any) => {
     ) {
       if (key[1].tags.responsive == true) {
         return (
-          <Grow in={props.checked}>
-            <div className={classes.portfolioCard} key={index}>
+          <Grow in={props.checked} key={index}>
+            <div className={classes.portfolioCard} >
               <div className={classes.picture}>
                 <img
                   className={classes.img}
@@ -123,8 +123,8 @@ const PortfolioCard = (props: any) => {
     ) {
       if (key[1].tags.fullstack == true) {
         return (
-          <Grow in={props.checked}>
-            <div className={classes.portfolioCard} key={index}>
+          <Grow in={props.checked} key={index}>
+            <div className={classes.portfolioCard} >
               <div className={classes.picture}>
                 <img
                   className={classes.img}
@@ -146,8 +146,8 @@ const PortfolioCard = (props: any) => {
     } else if (key[1].tags.restful == true && props.skills.restful == true) {
       if (key[1].tags.restful == true) {
         return (
-          <Grow in={props.checked}>
-            <div className={classes.portfolioCard} key={index}>
+          <Grow in={props.checked}  key={index}>
+            <div className={classes.portfolioCard}>
               <div className={classes.picture}>
                 <img
                   className={classes.img}
@@ -169,8 +169,8 @@ const PortfolioCard = (props: any) => {
     } else if (key[1].tags.web == true && props.skills.web == true) {
       if (key[1].tags.web == true) {
         return (
-          <Grow in={props.checked}>
-            <div className={classes.portfolioCard} key={index}>
+          <Grow in={props.checked}  key={index}>
+            <div className={classes.portfolioCard}>
               <div className={classes.picture}>
                 <img
                   className={classes.img}
@@ -190,7 +190,8 @@ const PortfolioCard = (props: any) => {
         );
       }
     }
-  });
+  })
+  } </>)
 };
 
 export default PortfolioCard;

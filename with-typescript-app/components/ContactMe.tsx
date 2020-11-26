@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) =>
     card: {
       minWidth: 275,
       margin: "20px",
-      background: `#00c0ffa6`,
+      background: `#295583`,
 
       boxShadow: `2px 2px 6px 0px black`,
     },

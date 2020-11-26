@@ -117,7 +117,7 @@ const useStyles = makeStyles((theme: Theme) =>
       overflowX: `hidden`,
       overflowY: `hidden`,
 
-      transition: `0.5s`,
+      transition: `0.3s ease-in`,
     },
     overlayContent: {
       position: `relative`,
@@ -182,7 +182,7 @@ export default function Navbar(props: any) {
               height: "200px",
             }}
           >
-            <Link href="#About" scroll={false}>
+            <Link href="/#About" scroll={false}>
               <a
                 onClick={() => {
                   setActiveTab({
@@ -203,7 +203,7 @@ export default function Navbar(props: any) {
                 About
               </a>
             </Link>
-            <Link href="#Portfolio" scroll={false}>
+            <Link href="/#Portfolio" scroll={false}>
               <a
                 onClick={() => {
                   setActiveTab({
@@ -224,7 +224,7 @@ export default function Navbar(props: any) {
                 Portfolio
               </a>
             </Link>
-            <Link href="#Contact" scroll={false}>
+            <Link href="/#Contact" scroll={false}>
               <a
                 onClick={() => {
                   setActiveTab({
