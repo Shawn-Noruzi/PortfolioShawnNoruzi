@@ -54,7 +54,6 @@ const useStyles = makeStyles((theme: Theme) =>
       background: `#00c0ffa6`,
 
       boxShadow: `2px 2px 6px 0px black`,
-      background: `rgba(18, 67, 117, 0.90)`,
     },
     cardTitle: {},
     ".MuiCardContent-root": {
