@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: `0 auto`,
       transition: `0.2s`,
       "&:hover": {
-        width: `510px`,
+        width: `560px`,
       },
     },
 
@@ -97,22 +97,24 @@ const PortfolioCard = (props: any) => {
     ) {
       if (key[1].tags.responsive == true) {
         return (
-          <div className={classes.portfolioCard} key={index}>
-            <div className={classes.picture}>
-              <img
-                className={classes.img}
-                alt="picture of site"
-                src={key[1].images[0]}
-              />
-            </div>
-            <div className={classes.contentContainer}>
+          <Grow in={props.checked}>
+            <div className={classes.portfolioCard} key={index}>
+              <div className={classes.picture}>
+                <img
+                  className={classes.img}
+                  alt="picture of site"
+                  src={key[1].images[0]}
+                />
+              </div>
               <p style={{ color: "#907c7c", fontSize: "small" }}>Website</p>
-              <div className={classes.titleContainer}>
-                <p className={classes.title}>{key[1].title} </p>
-                <p className={classes.text}> - {key[1].catchLine}</p>
+              <div className={classes.contentContainer}>
+                <div className={classes.titleContainer}>
+                  <span className={classes.title}>{key[1].title}</span>
+                  <span className={classes.text}> {key[1].catchLine} </span>
+                </div>
               </div>
             </div>
-          </div>
+          </Grow>
         );
       }
     } else if (
@@ -130,11 +132,11 @@ const PortfolioCard = (props: any) => {
                   src={key[1].images[0]}
                 />
               </div>
+              <p style={{ color: "#907c7c", fontSize: "small" }}>Website</p>
               <div className={classes.contentContainer}>
-                <p style={{ color: "#907c7c", fontSize: "small" }}>Website</p>
                 <div className={classes.titleContainer}>
-                  <p className={classes.title}>{key[1].title} </p>
-                  <p className={classes.text}> - {key[1].catchLine}</p>
+                  <span className={classes.title}>{key[1].title}</span>
+                  <span className={classes.text}> {key[1].catchLine} </span>
                 </div>
               </div>
             </div>
@@ -144,43 +146,47 @@ const PortfolioCard = (props: any) => {
     } else if (key[1].tags.restful == true && props.skills.restful == true) {
       if (key[1].tags.restful == true) {
         return (
-          <div className={classes.portfolioCard} key={index}>
-            <div className={classes.picture}>
-              <img
-                className={classes.img}
-                alt="picture of site"
-                src={key[1].images[0]}
-              />
-            </div>
-            <div className={classes.contentContainer}>
+          <Grow in={props.checked}>
+            <div className={classes.portfolioCard} key={index}>
+              <div className={classes.picture}>
+                <img
+                  className={classes.img}
+                  alt="picture of site"
+                  src={key[1].images[0]}
+                />
+              </div>
               <p style={{ color: "#907c7c", fontSize: "small" }}>Website</p>
-              <div className={classes.titleContainer}>
-                <p className={classes.title}>{key[1].title} </p>
-                <p className={classes.text}> - {key[1].catchLine}</p>
+              <div className={classes.contentContainer}>
+                <div className={classes.titleContainer}>
+                  <span className={classes.title}>{key[1].title}</span>
+                  <span className={classes.text}> {key[1].catchLine} </span>
+                </div>
               </div>
             </div>
-          </div>
+          </Grow>
         );
       }
     } else if (key[1].tags.web == true && props.skills.web == true) {
       if (key[1].tags.web == true) {
         return (
-          <div className={classes.portfolioCard} key={index}>
-            <div className={classes.picture}>
-              <img
-                className={classes.img}
-                alt="picture of site"
-                src={key[1].images[0]}
-              />
-            </div>
-            <div className={classes.contentContainer}>
+          <Grow in={props.checked}>
+            <div className={classes.portfolioCard} key={index}>
+              <div className={classes.picture}>
+                <img
+                  className={classes.img}
+                  alt="picture of site"
+                  src={key[1].images[0]}
+                />
+              </div>
               <p style={{ color: "#907c7c", fontSize: "small" }}>Website</p>
-              <div className={classes.titleContainer}>
-                <p className={classes.title}>{key[1].title} </p>
-                <p className={classes.text}> - {key[1].catchLine}</p>
+              <div className={classes.contentContainer}>
+                <div className={classes.titleContainer}>
+                  <span className={classes.title}>{key[1].title}</span>
+                  <span className={classes.text}> {key[1].catchLine} </span>
+                </div>
               </div>
             </div>
-          </div>
+          </Grow>
         );
       }
     }

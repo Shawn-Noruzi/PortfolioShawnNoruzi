@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import NavBar from "./navbar";
+import VizSensor from "react-visibility-sensor";
+import Fade from "@material-ui/core/Fade";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -14,7 +16,6 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundSize: "cover",
       [theme.breakpoints.up("sm")]: {
         background:
-        
           "linear-gradient(rgb(196 181 255 / 56%), rgb(146 202 228 / 60%)), url(/static/images/mountain.jpg)",
         height: "100vh",
         backgroundPosition: "center",
@@ -34,28 +35,31 @@ const useStyles = makeStyles((theme: Theme) =>
         letterSpacing: "10px",
       },
     },
-    subTitle:{
-      color:'white',
+    subTitle: {
+      color: "white",
       textAlign: `center`,
       fontFamily: `ProximaNovaExCn-Semibold, Arial`,
     },
-    nameContainer:{
+    scrollText: {
+      color: "white",
+      textAlign: `center`,
+      fontFamily: `ProximaNovaExCn-Semibold, Arial`,
+      position: "absolute",
+      top: `90%`,
+    },
+    nameContainer: {
       border: `7px solid white`,
       textAlign: `center`,
       height: `110px`,
       background: `rgb(0 0 0 / 14%)`,
       fontFamily: `ProximaNovaExCn-Semibold, Arial`,
-  
     },
     TopSectionText: {
       width: "325px",
-      margin: '0 auto',
+      margin: "0 auto",
       paddingTop: `359px`,
-      [theme.breakpoints.up("sm")]: {
-      },
-      [theme.breakpoints.up("md")]: {
-
-      },
+      [theme.breakpoints.up("sm")]: {},
+      [theme.breakpoints.up("md")]: {},
     },
     TopSectionBar: {
       borderBottom: " white solid",
@@ -67,6 +71,44 @@ const useStyles = makeStyles((theme: Theme) =>
         width: "90%",
       },
     },
+
+    iconScroll: {
+      position: `absolute`,
+      left: `50%`,
+      width: `40px`,
+      height: `70px`,
+      marginLeft: `-20px`,
+      top: `90%`,
+      marginTop: `-35px`,
+      boxShadow: `inset 0 0 0 1px #fff`,
+      borderRadius: `25px`,
+
+      "&:before": {
+        position: `absolute`,
+        left: `50%`,
+        content: "''",
+        width: ` 8px`,
+        height: `8px`,
+        background: `#fff`,
+        marginLeft: `-4px`,
+        top: `8px`,
+        borderRadius: `4px`,
+        animationDuration: `1.5s`,
+        animationIterationCount: `infinite`,
+        animationName: `$scroll`,
+      },
+    },
+    "@keyframes scroll": {
+      "0%": { opacity: 1 },
+
+      "100%": { opacity: 0, transform: "translateY(46px)" },
+    },
+    scrollContainer: {
+      position: `absolute`,
+      top: `90%`,
+      left: `50%`,
+    },
+
     // sectionMobile: {
     //   display: "flex",
     //   [theme.breakpoints.up("md")]: {
@@ -78,16 +120,41 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const TopSection = (props: any) => {
   const classes = useStyles();
+  let [active, setActive] = useState(false);
   return (
     <div className={classes.backgroundImage}>
       <NavBar props={props} />
-      <div className={classes.TopSectionText}>
-        <div className={classes.nameContainer} >
-          <p style={{marginTop:`8px`}} className={classes.title}>SHAWN</p>
-          <p className={classes.title}>NORUZI</p>
-        </div>
-        <p className={classes.subTitle}> Front End Developer |  UX and UI Designer </p>
-      </div>
+
+      <VizSensor
+        onChange={(isVisible) => {
+          setActive(isVisible);
+        }}
+      >
+        <Fade in={active} timeout={2000}>
+          <div className={classes.TopSectionText}>
+            <div className={classes.nameContainer}>
+              <Fade in={active} timeout={3000}>
+                <p style={{ marginTop: `8px` }} className={classes.title}>
+                  SHAWN
+                </p>
+              </Fade>
+              <Fade in={active} timeout={4500}>
+                <p className={classes.title}>NORUZI</p>
+              </Fade>
+            </div>
+            <Fade in={active} timeout={6000}>
+              <p className={classes.subTitle}>
+                Front End Developer | UX and UI Designer{" "}
+              </p>
+            </Fade>
+            <Fade in={active} timeout={8000}>
+              <div className={classes.scrollContainer}>
+                <div className={classes.iconScroll}></div>
+              </div>
+            </Fade>
+          </div>
+        </Fade>
+      </VizSensor>
     </div>
   );
 };

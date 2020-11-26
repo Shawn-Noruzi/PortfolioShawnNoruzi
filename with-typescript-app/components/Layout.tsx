@@ -5,6 +5,7 @@ import Head from "next/head";
 import About from "./AboutMe";
 import Contact from "./ContactMe";
 import Portfolio from "./Portfolio";
+import Footer from './Footer'
 
 type Props = {
   children?: ReactNode;
@@ -32,6 +33,7 @@ const Layout = ({
           isThirdVisible={isThirdVisible}
         />
       </div>
+
       <div ref={firstRef}>
         <About />
       </div>
@@ -41,6 +43,7 @@ const Layout = ({
       <div ref={thirdRef}>
         <Contact />
       </div>
+      <Footer/>
     </div>
   );
 };

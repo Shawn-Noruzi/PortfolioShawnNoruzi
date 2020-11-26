@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import VizSensor from "react-visibility-sensor";
+import Fade from "@material-ui/core/Fade";
+import Grow from '@material-ui/core/Grow';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -33,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: `15px`,
     },
     container: { marginTop: "120px", textAlign: `center` },
-    img: { borderRadius: "1000px", filter: `brightness(0.8)`, zIndex:-30 },
+    img: { borderRadius: "1000px", filter: `brightness(0.8)`, zIndex: -30 },
     bar: {
       borderBottom: `3px solid`,
       color: `#4777ff`,
@@ -56,63 +58,111 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 export default function AboutMe() {
   const classes = useStyles();
+  let [active, setActive] = useState(true);
   return (
-    <div id={"About"} className={classes.container}>
-      <Image
-        className={classes.img}
-        src="/static/images/shayan.jpg"
-        alt="Picture of author"
-        width={350}
-        height={350}
-      />
+    <VizSensor
+      partialVisibility
+      onChange={(isVisible) => {
+        setActive(isVisible);
+      }}
+    >
+      <div id={"About"} className={classes.container}>
+        <Fade in={active} timeout={2000}>
+          <img
+            className={classes.img}
+            src="/static/images/shayan.jpg"
+            alt="Picture of author"
+            width={350}
+            height={350}
+          />
+        </Fade>
 
-      <p className={classes.title}>Seasoned Front End Engineer</p>
-      <p className={classes.subTitle}>from Vancouver, Canada</p>
-      <div className={classes.textContainer}>
-        <div className={classes.textCard}>
-          <p className={classes.textHeader}>Experience</p>
-          <div className={classes.bar} />
-          <p className={classes.text}>
-            I have a Computer Science and Mathematics educational background,
-            team lead experience, and a plethora of projects focused on front
-            end skill development.
-          </p>
-          <p className={classes.text}>
-            I've built a bounty web app for developers to find work, a
-            geolocation based constituent consulting app and a tinder-like
-            mentor finding app.
-          </p>
-        </div>
+        <Fade in={active} timeout={2500}>
+          <p className={classes.title}>Seasoned Front End Engineer</p>
+        </Fade>
+        <Fade in={active} timeout={2500}>
+          <p className={classes.subTitle}>from Vancouver, Canada</p>
+        </Fade>
 
-        <div className={classes.textCard}>
-          <p className={classes.textHeader}>Who I am </p>
-          <div className={classes.bar} />
-          <p className={classes.text}>
-            I've lived and gone to school in B.C. Canada and I have a cat named
-            Oscar, the prince of purrsia. I spend a lot of my time teaching (programming, math, anything inbetween) - I find myself having the most fun helping others grow.
-          </p>
-          <p className={classes.text}>
-            My main objective is to bring my expertise of high end and modern
-            web design and engineering together with my client's needs to create
-            purposeful branding and a product that truly stands out.
-          </p>
-        </div>
+        <div className={classes.textContainer}>
+          <div className={classes.textCard}>
+            <Grow in={active} timeout={3000}>
+              <p className={classes.textHeader}>Experience</p>
+            </Grow>
+            <Grow in={active} timeout={3500}>
+              <div className={classes.bar} />
+            </Grow>
+            <Grow in={active} timeout={3500}>
+              <div>
+                <p className={classes.text}>
+                  I have a Computer Science and Mathematics educational
+                  background, team lead experience, and a plethora of projects
+                  focused on front end skill development.
+                </p>
+                <p className={classes.text}>
+                  I've built a bounty web app for developers to find work, a
+                  geolocation based constituent consulting app and a tinder-like
+                  mentor finding app.
+                </p>
+              </div>
+            </Grow>
+          </div>
 
-        <div className={classes.textCard}>
-          <p className={classes.textHeader}>What I like</p>
-          <div className={classes.bar} />
-          <p className={classes.text}>
-            From new design patterns to new tools - there's always something
-            that keeps my interest in this line of work and its one of the main
-            reasons I chose to get into it.
-          </p>
-          <p className={classes.text}>
-            Outside of web development you can find me making educational
-            content, playing rugby, or reading up on politics, psychology and
-            health science.
-          </p>
+          <div className={classes.textCard}>
+            <Grow in={active} timeout={4100}>
+              <p className={classes.textHeader}>Who I am </p>
+            </Grow>
+
+            <Grow in={active} timeout={4600}>
+              <div className={classes.bar} />
+            </Grow>
+
+            <Grow in={active} timeout={4600}>
+              <div>
+                <p className={classes.text}>
+                  I've lived and gone to school in B.C. Canada and I have a cat
+                  named Oscar, the prince of purrsia. I spend a lot of my time
+                  teaching (programming, math, anything inbetween) - I find
+                  myself having the most fun helping others grow.
+                </p>
+                <p className={classes.text}>
+                  My main objective is to bring my expertise of high end and
+                  modern web design and engineering together with my client's
+                  needs to create purposeful branding and a product that truly
+                  stands out.
+                </p>
+              </div>
+            </Grow>
+          </div>
+
+          <div className={classes.textCard}>
+            <Grow in={active} timeout={5100}>
+
+              <p className={classes.textHeader}>What I like</p>
+            </Grow>
+
+            <Grow in={active} timeout={5700}>
+
+              <div className={classes.bar} />
+            </Grow>
+
+            <Grow in={active} timeout={5700}>
+              <div>
+                <p className={classes.text}>
+                  From new design patterns to new tools - there's always
+                  something that keeps my interest in this line of work and its
+                  one of the main reasons I chose to get into it.
+                </p>
+                <p className={classes.text}>
+                  Outside of web development you can find me making educational
+                  content, playing rugby, or reading up on politics, psychology
+                  and health science.
+                </p>
+              </div>
+            </Grow>
+          </div>
         </div>
       </div>
-    </div>
+    </VizSensor>
   );
 }

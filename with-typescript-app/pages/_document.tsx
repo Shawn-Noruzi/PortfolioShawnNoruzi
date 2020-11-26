@@ -12,12 +12,15 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta name="theme-color" content={theme.palette.primary.main} />
+
+
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
           />
           <link href="/fonts/fonts.css" rel="stylesheet" />
-          <link href="/hamburgers.css" rel="stylesheet"/>
+          <link href="/hamburgers.css" rel="stylesheet" />
+
           <style jsx global>
             {`
               html,
@@ -37,6 +40,7 @@ class MyDocument extends Document {
               }
             `}
           </style>
+
         </Head>
         <body>
           <Main />

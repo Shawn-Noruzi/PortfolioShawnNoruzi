@@ -103,12 +103,13 @@ const useStyles = makeStyles((theme: Theme) =>
       position: `fixed`,
       margin: `20px`,
       right: "0",
+      zIndex: 1,
     },
     overlay: {
       height: `0%`,
       width: `100%`,
       position: `fixed`,
-      zIndex: -1,
+      zIndex: 3,
       left: `0`,
       top: `0`,
 
@@ -132,12 +133,17 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function Navbar(props: any) {
   const classes = useStyles();
-  const [activeTab, setActiveTab] = useState({ about: false, portfolio: false, contact: false });
+  const [activeTab, setActiveTab] = useState({
+    about: false,
+    portfolio: false,
+    contact: false,
+  });
   useEffect(() => {
     setActiveTab({
-      about: props.props.isFirstVisible, portfolio: props.props.isSecondVisible, contact: props.props.isThirdVisible,
+      about: props.props.isFirstVisible,
+      portfolio: props.props.isSecondVisible,
+      contact: props.props.isThirdVisible,
     });
-
   }, [props]);
 
   const [menu, setMenu] = useState(false);
@@ -169,56 +175,83 @@ export default function Navbar(props: any) {
 
       <div id="myNav" className={classes.overlay}>
         <div className={classes.overlayContent}>
-          <Link href="#About" scroll={false}>
-            <a
-              onClick={() =>
-                setActiveTab({ about: true, portfolio: false, contact: false })
-              }
-              className={
-                activeTab.about == true
-                  ? classes.activeLink
-                  : classes.linkText
-              }
-            >
-              About
-            </a>
-          </Link>
-          <Link href="#Portfolio" scroll={false}>
-            <a
-              onClick={() =>
-                setActiveTab({ about: false, portfolio: true, contact: false })
-              }
-              className={
-                activeTab.portfolio == true
-                  ? classes.activeLink
-                  : classes.linkText
-              }
-            >
-              Portfolio
-            </a>
-          </Link>
-          <Link
-            href="#Contact"
-            scroll={false}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              height: "200px",
+            }}
           >
-            <a
-              onClick={() =>
-                setActiveTab({ about: false, portfolio: false, contact: true })
-              }
-              className={
-                activeTab.contact == true
-                  ? classes.activeLink
-                  : classes.linkText
-              }
-            >
-              Contact
-            </a>
-          </Link>
+            <Link href="#About" scroll={false}>
+              <a
+                onClick={() => {
+                  setActiveTab({
+                    about: true,
+                    portfolio: false,
+                    contact: false,
+                  });
+                  setTimeout(function () {
+                    openMenu();
+                  }, 800);
+                }}
+                className={
+                  activeTab.about == true
+                    ? classes.activeLink
+                    : classes.linkText
+                }
+              >
+                About
+              </a>
+            </Link>
+            <Link href="#Portfolio" scroll={false}>
+              <a
+                onClick={() => {
+                  setActiveTab({
+                    about: false,
+                    portfolio: true,
+                    contact: false,
+                  });
+                  setTimeout(function () {
+                    openMenu();
+                  }, 800);
+                }}
+                className={
+                  activeTab.portfolio == true
+                    ? classes.activeLink
+                    : classes.linkText
+                }
+              >
+                Portfolio
+              </a>
+            </Link>
+            <Link href="#Contact" scroll={false}>
+              <a
+                onClick={() => {
+                  setActiveTab({
+                    about: false,
+                    portfolio: false,
+                    contact: true,
+                  });
+                  setTimeout(function () {
+                    openMenu();
+                  }, 800);
+                }}
+                className={
+                  activeTab.contact == true
+                    ? classes.activeLink
+                    : classes.linkText
+                }
+              >
+                Contact
+              </a>
+            </Link>
+          </div>
+
           <div
             style={{
               margin: "0 auto",
               textAlign: "center",
-              marginTop: "20%",
+              marginTop: "10%",
             }}
           >
             <a style={{ margin: "20px" }} href="mailto:Shawn.Noruzi@gmail.com">
