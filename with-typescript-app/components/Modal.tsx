@@ -51,9 +51,9 @@ export interface DialogTitleProps extends WithStyles<typeof styles> {
 }
 
 const DialogTitle = withStyles(styles)((props: DialogTitleProps) => {
-  const { children, classes, onClose, ...other } = props;
+  const { children, classes, onClose,  } = props;
   return (
-    <MuiDialogTitle disableTypography className={classes.root} {...other}>
+    <MuiDialogTitle disableTypography className={classes.root}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
         <IconButton
@@ -75,7 +75,7 @@ const DialogContent = withStyles((theme: Theme) => ({
 }))(MuiDialogContent);
 
 const CustomizedDialogs = withStyles(styles)((props: any) => {
-  const { classes, ...other } = props;
+  const { classes } = props;
   const [open, setOpen] = React.useState(false);
 
   const images = props.data.images.map((item: object) => {
