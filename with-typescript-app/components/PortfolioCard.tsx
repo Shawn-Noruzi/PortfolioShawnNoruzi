@@ -48,9 +48,9 @@ const useStyles = makeStyles((theme: Theme) =>
       transition: `0.2s`,
 
       [theme.breakpoints.down("md")]: {
-        width: `300px`,
+        width: `350px`,
         "&:hover": {
-          width: '300px'
+          width: '350px'
         },
       },
     },
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down("md")]: {
         alignItems: `flex-start`,
         flexDirection: `column`,
-        marginBottom:'30px',
+        marginBottom:'80px',
       },
     },
   })
