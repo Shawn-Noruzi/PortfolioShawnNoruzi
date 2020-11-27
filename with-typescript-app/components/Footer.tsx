@@ -16,6 +16,11 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     textBottom: {
+      [theme.breakpoints.down("md")]: {
+        width: `250px`,
+        margin: `0 auto`,
+      },
+ 
       color: "white",
       fontWeight: "normal",
       fontSize: "medium",

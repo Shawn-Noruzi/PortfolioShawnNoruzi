@@ -2,23 +2,26 @@ import React, { useState } from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import VizSensor from "react-visibility-sensor";
 import Fade from "@material-ui/core/Fade";
-import Grow from '@material-ui/core/Grow';
+import Grow from "@material-ui/core/Grow";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     text: {
+      textAlign: "left",
       color: "#333",
       width: "390px",
       margin: `30px 20px 20px 20px`,
       height: `150px`,
       font: `16px/34px 'HelveticaNeue_Thin', Arial`,
       [theme.breakpoints.down("md")]: {
-        margin:` 0 auto`,
-        marginTop:` 30px`,
+        margin: ` 0 auto`,
+        marginTop: ` 30px`,
         marginBottom: `30px`,
         width: "330px",
       },
-
+      [theme.breakpoints.down("sm")]: {
+        width: `300px`,
+      },
     },
 
     title: {
@@ -28,9 +31,8 @@ const useStyles = makeStyles((theme: Theme) =>
       maxWidth: `750px`,
       padding: `55px 0px 0px`,
       [theme.breakpoints.down("md")]: {
-        fontSize:"33px"
+        fontSize: "26px",
       },
-
     },
     subTitle: {
       font: ` 45px/130% 'HelveticaNeue_Light', Arial`,
@@ -39,7 +41,11 @@ const useStyles = makeStyles((theme: Theme) =>
       maxWidth: `750px`,
       paddingTop: `15px`,
       [theme.breakpoints.down("md")]: {
-        fontSize:"33px"
+        fontSize: "33px",
+      },
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "26px",
+        width: `300px`,
       },
     },
     container: { marginTop: "120px", textAlign: `center` },
@@ -57,14 +63,25 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingTop: "40px",
       paddingBottom: "40px",
       [theme.breakpoints.down("md")]: {
-        flexDirection: 'column'
+        flexDirection: "column",
       },
     },
     textHeader: {
       font: `24px 'ProximaNovaSbold', Arial`,
       letterSpacing: `5px`,
     },
-    textCard: { textAlign: "center", padding: `0px 40px` },
+    textCard: {
+      textAlign: "center",
+      padding: `0px 40px`,
+      [theme.breakpoints.down("md")]: {
+        padding: "0",
+      },
+    },
+    spacer: {
+      [theme.breakpoints.down("sm")]: {
+        height: "20px",
+      },
+    },
   })
 );
 export default function AboutMe() {
@@ -136,6 +153,7 @@ export default function AboutMe() {
                   teaching (programming, math, anything inbetween) - I find
                   myself having the most fun helping others grow.
                 </p>
+                <div className={classes.spacer}></div>
                 <p className={classes.text}>
                   My main objective is to bring my expertise of high end and
                   modern web design and engineering together with my client's
@@ -148,12 +166,10 @@ export default function AboutMe() {
 
           <div className={classes.textCard}>
             <Grow in={active} timeout={5100}>
-
               <p className={classes.textHeader}>What I like</p>
             </Grow>
 
             <Grow in={active} timeout={5700}>
-
               <div className={classes.bar} />
             </Grow>
 

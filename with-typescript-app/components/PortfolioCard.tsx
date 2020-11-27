@@ -29,6 +29,10 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: `30px`,
       font: `16px/34px 'HelveticaNeue_Thin', Arial`,
       width: `450px`,
+
+      [theme.breakpoints.down("sm")]: {
+        width: `300px`,
+      },
   
     },
     picture: {
@@ -42,13 +46,11 @@ const useStyles = makeStyles((theme: Theme) =>
       width: `500px`,
       margin: `0 auto`,
       transition: `0.2s`,
-      "&:hover": {
-        width: `560px`,
-      },
+
       [theme.breakpoints.down("md")]: {
-        width: `100%`,
+        width: `300px`,
         "&:hover": {
-          width: '100%'
+          width: '300px'
         },
       },
     },
