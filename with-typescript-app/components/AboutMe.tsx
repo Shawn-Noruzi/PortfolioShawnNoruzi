@@ -10,12 +10,13 @@ const useStyles = makeStyles((theme: Theme) =>
       color: "#333",
       width: "390px",
       margin: `30px 20px 20px 20px`,
-      height: `120px`,
+      height: `150px`,
       font: `16px/34px 'HelveticaNeue_Thin', Arial`,
       [theme.breakpoints.down("md")]: {
         margin:` 0 auto`,
         marginTop:` 30px`,
         marginBottom: `30px`,
+        width: "330px",
       },
 
     },

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
     buttonsContainer: {
       margin: `0 auto`,
       width: `fit-content`,
-      zIndex: 2,
+      zIndex: 1,
       [theme.breakpoints.down("md")]: {
         display: `flex`,
         width: `350px`,

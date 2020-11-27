@@ -46,8 +46,9 @@ const useStyles = makeStyles((theme: Theme) =>
         width: `560px`,
       },
       [theme.breakpoints.down("md")]: {
+        width: `100%`,
         "&:hover": {
-
+          width: '100%'
         },
       },
     },
