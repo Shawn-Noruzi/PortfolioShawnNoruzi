@@ -18,8 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: "80px",
       fontWeight: "normal",
       fontSize: "medium",
-      fontFamily:
-        "HelveticaNeue_Light,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
+      fontFamily: "HelveticaNeue_Thin, Arial",
 
       [theme.breakpoints.down("sm")]: {
         marginLeft: "5px",
@@ -62,12 +61,13 @@ const useStyles = makeStyles((theme: Theme) =>
 
       boxShadow: `2px 2px 6px 0px black`,
     },
-    cardTitle: {},
+    cardTitle: { fontFamily: "HelveticaNeue_Thin, Arial" },
     ".MuiCardContent-root": {
       textAlign: "center",
     },
     links: {
       textDecoration: `none`,
+      fontFamily: "HelveticaNeue_Thin, Arial",
       margin: "20px",
       "&:visited": { color: `#ffffff` },
       "&:hover": { color: `#a2e9ff` },
