@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
         "linear-gradient( rgb(196 181 255 / 56%), rgb(228 146 222 / 60%)),url(/static/images/mountain.jpg)",
 
       height: "100vh",
-      backgroundPosition: "right",
+      backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       [theme.breakpoints.up("sm")]: {
@@ -52,17 +52,16 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: `center`,
       height: `110px`,
       width: "80%",
-      margin: '0 auto',
+      margin: "0 auto",
       background: `rgb(0 0 0 / 14%)`,
       fontFamily: `ProximaNovaExCn-Semibold, Arial`,
-      
     },
     TopSectionText: {
       width: "325px",
       margin: "0 auto",
-      paddingTop: `359px`,
-      [theme.breakpoints.up("sm")]: {},
-      [theme.breakpoints.up("md")]: {},
+
+      [theme.breakpoints.down("sm")]: { paddingTop: `200px` },
+      [theme.breakpoints.up("md")]: { paddingTop: `200px` },
     },
     TopSectionBar: {
       borderBottom: " white solid",
