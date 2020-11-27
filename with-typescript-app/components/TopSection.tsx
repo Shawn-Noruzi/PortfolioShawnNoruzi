@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     backgroundImage: {
       background:
-        "linear-gradient( rgb(196 181 255 / 56%), rgb(228 146 222 / 60%)), url(/static/images/brownbgM.png)",
+        "linear-gradient( rgb(196 181 255 / 56%), rgb(228 146 222 / 60%)),url(/static/images/mountain.jpg)",
 
       height: "100vh",
       backgroundPosition: "right",
@@ -51,8 +51,11 @@ const useStyles = makeStyles((theme: Theme) =>
       border: `7px solid white`,
       textAlign: `center`,
       height: `110px`,
+      width: "80%",
+      margin: '0 auto',
       background: `rgb(0 0 0 / 14%)`,
       fontFamily: `ProximaNovaExCn-Semibold, Arial`,
+      
     },
     TopSectionText: {
       width: "325px",

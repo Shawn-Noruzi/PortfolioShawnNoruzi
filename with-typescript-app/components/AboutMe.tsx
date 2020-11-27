@@ -12,9 +12,12 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: `30px 20px 20px 20px`,
       height: `120px`,
       font: `16px/34px 'HelveticaNeue_Thin', Arial`,
-      [theme.breakpoints.down("sm")]: {
-        marginLeft: "5px",
+      [theme.breakpoints.down("md")]: {
+        margin:` 0 auto`,
+        marginTop:` 30px`,
+        marginBottom: `30px`,
       },
+
     },
 
     title: {
@@ -23,9 +26,10 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: `0 auto`,
       maxWidth: `750px`,
       padding: `55px 0px 0px`,
-      [theme.breakpoints.down("sm")]: {
-        marginLeft: "5px",
+      [theme.breakpoints.down("md")]: {
+        fontSize:"33px"
       },
+
     },
     subTitle: {
       font: ` 45px/130% 'HelveticaNeue_Light', Arial`,
@@ -33,6 +37,9 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: `0 auto`,
       maxWidth: `750px`,
       paddingTop: `15px`,
+      [theme.breakpoints.down("md")]: {
+        fontSize:"33px"
+      },
     },
     container: { marginTop: "120px", textAlign: `center` },
     img: { borderRadius: "1000px", filter: `brightness(0.8)`, zIndex: -30 },
@@ -48,6 +55,9 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: "0 auto",
       paddingTop: "40px",
       paddingBottom: "40px",
+      [theme.breakpoints.down("md")]: {
+        flexDirection: 'column'
+      },
     },
     textHeader: {
       font: `24px 'ProximaNovaSbold', Arial`,

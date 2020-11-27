@@ -1,21 +1,31 @@
 import React, { useState } from "react";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import PortfolioCard from "./PortfolioCard";
 import VizSensor from "react-visibility-sensor";
-import Grow from '@material-ui/core/Grow';
+import Grow from "@material-ui/core/Grow";
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     portfolioContainer: {
       display: `flex`,
       flexWrap: `wrap`,
+      justifyContent: `center`
+
+
     },
     buttonsContainer: {
       margin: `0 auto`,
       width: `fit-content`,
       zIndex: 2,
+      [theme.breakpoints.down("md")]: {
+        display: `flex`,
+        width: `350px`,
+        flexWrap: `wrap`,
+        marginBottom: `30px`,
+        justifyContent:"center"
+      },
     },
     button: {
       color: `white`,
@@ -43,7 +53,7 @@ const useStyles = makeStyles(() =>
       marginBottom: `50px`,
     },
     title: {
-      font: `24px 'ProximaNovaSbold', Arial`,
+      font: `24px 'PrbuttonoximaNovaSbold', Arial`,
       letterSpacing: `5px`,
       color: ` #333`,
       margin: `0 auto`,

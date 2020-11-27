@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontWeight: "normal",
       fontSize: "medium",
       fontFamily:
-        "Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
+        "HelveticaNeue_Light,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
 
       [theme.breakpoints.down("sm")]: {
         marginLeft: "5px",
@@ -41,7 +41,14 @@ const useStyles = makeStyles((theme: Theme) =>
       borderBottom: `3px solid`,
       marginBottom: `50px`,
     },
-    container: {},
+    container: {
+      display: "flex",
+      justifyContent: "center",
+      paddingBottom: "80px",
+      [theme.breakpoints.down("md")]: {
+        flexDirection: "column",
+      },
+    },
     textContainer: {
       width: "1200px",
       margin: "0 auto",
@@ -79,7 +86,7 @@ export default function ContactMe() {
         setActive(isVisible);
       }}
     >
-      <div id={"Contact"} className={classes.container}>
+      <div id={"Contact"}>
         <Grow in={active} timeout={1000}>
           <div>
             <p className={classes.title}> Contact Me </p>
@@ -87,13 +94,7 @@ export default function ContactMe() {
           </div>
         </Grow>
 
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            paddingBottom: "80px",
-          }}
-        >
+        <div className={classes.container}>
           <Grow in={active} timeout={1000}>
             <Card className={classes.card}>
               <CardContent style={{ textAlign: `center`, color: `white` }}>

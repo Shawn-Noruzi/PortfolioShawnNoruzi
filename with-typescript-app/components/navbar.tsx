@@ -49,9 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
         transition: "0.3s",
         fontSize: `23px`,
       },
-      [theme.breakpoints.down("sm")]: {
-        marginLeft: "5px",
-      },
+
     },
     activeLink: {
       marginBottom: `20px`,
@@ -64,9 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
       fontFamily:
         "Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
-      [theme.breakpoints.down("md")]: {
-        marginLeft: "5px",
-      },
+
     },
     gutters: {
       paddingLeft: theme.spacing(2),

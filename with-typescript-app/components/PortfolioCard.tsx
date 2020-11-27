@@ -15,9 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       color: ` #333`,
       width: `60%`,
       textDecoration: "underline",
-      [theme.breakpoints.down("sm")]: {
-        marginLeft: "5px",
-      },
+
     },
     subTitle: {
       font: ` 45px/130% 'HelveticaNeue_Light', Arial`,
@@ -31,9 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: `30px`,
       font: `16px/34px 'HelveticaNeue_Thin', Arial`,
       width: `450px`,
-      [theme.breakpoints.down("sm")]: {
-        marginLeft: "5px",
-      },
+  
     },
     picture: {
       background: "#2d2d2d",
@@ -49,6 +45,11 @@ const useStyles = makeStyles((theme: Theme) =>
       "&:hover": {
         width: `560px`,
       },
+      [theme.breakpoints.down("md")]: {
+        "&:hover": {
+
+        },
+      },
     },
 
     portfolioCard: {
@@ -57,11 +58,22 @@ const useStyles = makeStyles((theme: Theme) =>
       width: `44%`,
       height: ` 550px`,
       margin: `50px`,
+      [theme.breakpoints.down("md")]: {
+        width:`100%`,
+        margin: `0px`
+      },
     },
 
     titleContainer: {
       display: `flex`,
       alignItems: `center`,
+      marginLeft:'20px',
+ 
+      [theme.breakpoints.down("md")]: {
+        alignItems: `flex-start`,
+        flexDirection: `column`,
+        marginBottom:'30px',
+      },
     },
   })
 );
@@ -81,7 +93,7 @@ const PortfolioCard = (props: any) => {
                 src={key[1].images[0]}
               />
             </div>
-            <p style={{ color: "#907c7c", fontSize: "small" }}>Website</p>
+            <p style={{ color: "#907c7c", fontSize: "small", marginLeft:"10px" }}>Website</p>
             <div className={classes.contentContainer}>
               <div className={classes.titleContainer}>
                 <span className={classes.title}>{key[1].title}</span>
