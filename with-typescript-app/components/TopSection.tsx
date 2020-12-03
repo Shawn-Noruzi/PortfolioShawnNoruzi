@@ -110,13 +110,6 @@ const useStyles = makeStyles((theme: Theme) =>
       top: `90%`,
       left: `50%`,
     },
-
-    // sectionMobile: {
-    //   display: "flex",
-    //   [theme.breakpoints.up("md")]: {
-    //     display: "none",
-    //   },
-    // },
   })
 );
 
