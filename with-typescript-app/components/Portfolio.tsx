@@ -197,7 +197,7 @@ const Portfolio = () => {
             ) : (
               <div
                 style={{
-                  height: "400px",
+                  height: "800px",
                   width: "400px",
                   margin: "0 auto",
                   marginTop: `50px`,
