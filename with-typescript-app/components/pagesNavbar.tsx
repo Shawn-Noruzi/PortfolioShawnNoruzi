@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function Navbar(props: any) {
+export default function Navbar() {
   const classes = useStyles();
 
   const [menu, setMenu] = useState(false);
