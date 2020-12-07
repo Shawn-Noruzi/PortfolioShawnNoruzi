@@ -50,13 +50,14 @@ const useStyles = makeStyles((theme: Theme) =>
     text: {
       textAlign: "left",
       color: "#333",
-      width: ` 70%`,
+
       font: `16px/34px 'HelveticaNeue_Thin', Arial`,
       [theme.breakpoints.down("md")]: {
         width: `unset`,
       },
     },
     textSpacingTitleContent: {
+      marginLeft: `50px`,
       [theme.breakpoints.down("md")]: {
         width: `500px`,
         margin: "0 auto",
@@ -69,7 +70,14 @@ const useStyles = makeStyles((theme: Theme) =>
     textSpacingOverviewContent: {
       [theme.breakpoints.down("md")]: {
         width: `280px`,
-        margin: "0 auto",
+
+      },
+    },
+    overviewTextContainer:{
+      display: "flex", alignItems: "baseline",     marginLeft: `30px`,
+      [theme.breakpoints.down("md")]: {
+        marginLeft: `10px`
+
       },
     },
 
@@ -325,7 +333,7 @@ export default function project() {
                       in={active}
                     >
                       <div
-                        style={{ display: "flex", alignItems: "baseline" }}
+                        className={classes.overviewTextContainer}
                         key={index}
                       >
                         <ArrowRightIcon style={{ paddingTop: `7px` }} />
