@@ -62,6 +62,10 @@ const useStyles = makeStyles((theme: Theme) =>
         width: `100%`,
       },
     },
+
+    background: {
+      background: "#e6e6e6",
+    },
   })
 );
 
