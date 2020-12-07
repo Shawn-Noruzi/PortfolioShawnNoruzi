@@ -116,14 +116,23 @@ const useStyles = makeStyles((theme: Theme) =>
 const TopSection = (props: any) => {
   const classes = useStyles();
   let [active, setActive] = useState(false);
+  let [hasBeenVisible, setHasBeenVisible] = useState(false);
   return (
     <div className={classes.backgroundImage}>
       <NavBar props={props} />
 
       <VizSensor
         onChange={(isVisible) => {
+
+          if (active && hasBeenVisible) {
+            return;
+          }
+  
           setActive(isVisible);
+          setHasBeenVisible(true);
         }}
+        active={hasBeenVisible ? !active : true}
+        
       >
         <Fade in={active} timeout={2000}>
           <div className={classes.TopSectionText}>
@@ -133,16 +142,16 @@ const TopSection = (props: any) => {
                   SHAWN
                 </p>
               </Fade>
-              <Fade in={active} timeout={4500}>
+              <Fade in={active} timeout={3500}>
                 <p className={classes.title}>NORUZI</p>
               </Fade>
             </div>
-            <Fade in={active} timeout={6000}>
+            <Fade in={active} timeout={4000}>
               <p className={classes.subTitle}>
                 Front End Developer | UX and UI Designer{" "}
               </p>
             </Fade>
-            <Fade in={active} timeout={8000}>
+            <Fade in={active} timeout={6000}>
               <div className={classes.scrollContainer}>
                 <div className={classes.iconScroll}></div>
               </div>

@@ -87,12 +87,21 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function AboutMe() {
   const classes = useStyles();
   let [active, setActive] = useState(true);
+  let [hasBeenVisible, setHasBeenVisible] = useState(false);
   return (
     <VizSensor
       partialVisibility
       onChange={(isVisible) => {
+
+        if (active && hasBeenVisible) {
+          return;
+        }
+
         setActive(isVisible);
+        setHasBeenVisible(true);
       }}
+      active={hasBeenVisible ? !active : true}
+    
     >
       <div id={"About"} className={classes.container}>
         <Fade in={active} timeout={2000}>
@@ -117,10 +126,10 @@ export default function AboutMe() {
             <Grow in={active} timeout={3000}>
               <p className={classes.textHeader}>Experience</p>
             </Grow>
-            <Grow in={active} timeout={3500}>
+            <Grow in={active} timeout={3000}>
               <div className={classes.bar} />
             </Grow>
-            <Grow in={active} timeout={3500}>
+            <Grow in={active} timeout={3000}>
               <div>
                 <p className={classes.text}>
                   I have a Computer Science and Mathematics educational

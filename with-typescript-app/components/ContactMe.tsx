@@ -46,6 +46,8 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingBottom: "80px",
       [theme.breakpoints.down("md")]: {
         flexDirection: "column",
+        width: `300px`,
+        margin: `0 auto`,
       },
     },
     textContainer: {
@@ -79,12 +81,21 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function ContactMe() {
   const classes = useStyles();
   let [active, setActive] = useState(true);
+  let [hasBeenVisible, setHasBeenVisible] = useState(false);
   return (
     <VizSensor
       partialVisibility
       onChange={(isVisible) => {
+   
+        if (active && hasBeenVisible) {
+          return;
+        }
+
         setActive(isVisible);
+        setHasBeenVisible(true);
       }}
+      active={hasBeenVisible ? !active : true}
+     
     >
       <div id={"Contact"}>
         <Grow in={active} timeout={1000}>

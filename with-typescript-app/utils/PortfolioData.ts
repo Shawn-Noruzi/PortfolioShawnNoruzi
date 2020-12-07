@@ -2,10 +2,9 @@ export type PortfolioData = {
   gitpay: {
     tags: {
       all: boolean;
-      web: boolean;
-      responsive: boolean;
+      frontend: boolean;
       fullstack: boolean;
-      restful: boolean;
+
     };
     title: string;
     catchLine: string;
@@ -18,10 +17,8 @@ export type PortfolioData = {
   placespeak: {
     tags: {
       all: boolean;
-      web: boolean;
-      responsive: boolean;
+      frontend: boolean;
       fullstack: boolean;
-      restful: boolean;
     };
     title: string;
     catchLine: string;
@@ -34,10 +31,8 @@ export type PortfolioData = {
   mentor: {
     tags: {
       all: boolean;
-      web: boolean;
-      responsive: boolean;
+      frontend: boolean;
       fullstack: boolean;
-      restful: boolean;
     };
     title: string;
     catchLine: string;
@@ -50,10 +45,8 @@ export type PortfolioData = {
   custom: {
     tags: {
       all: boolean;
-      web: boolean;
-      responsive: boolean;
+      frontend: boolean;
       fullstack: boolean;
-      restful: boolean;
     };
     title: string;
     catchLine: string;
@@ -69,10 +62,9 @@ export const jobData: PortfolioData = {
   gitpay: {
     tags: {
       all: true,
-      web: true,
-      responsive: true,
+      frontend: true,
       fullstack: false,
-      restful: true,
+
     },
     title: "GitPay",
     catchLine: "Bounty website for developers to find paid work",
@@ -93,10 +85,8 @@ export const jobData: PortfolioData = {
   placespeak: {
     tags: {
       all: true,
-      web: true,
-      responsive: true,
+      frontend: true,
       fullstack: true,
-      restful: true,
     },
     title: "PlaceSpeak",
     catchLine: "Geolocation constituent consulting",
@@ -117,10 +107,8 @@ export const jobData: PortfolioData = {
   mentor: {
     tags: {
       all: true,
-      web: true,
-      responsive: true,
+      frontend: true,
       fullstack: false,
-      restful: true,
     },
     title: "Open Mentorship",
     catchLine: "Tinder-Like mentor finding app.",
@@ -139,10 +127,8 @@ export const jobData: PortfolioData = {
   custom: {
     tags: {
       all: true,
-      web: true,
-      responsive: true,
+      frontend: true,
       fullstack: false,
-      restful: true,
     },
     title: "Slider Portfolio",
     catchLine: "Innovative way to present portfolio data",

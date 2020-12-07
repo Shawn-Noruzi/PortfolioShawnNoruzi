@@ -4,7 +4,7 @@ import Grow from "@material-ui/core/Grow";
 import Link from "next/link";
 
 import { jobData } from "../utils/PortfolioData";
-
+import VizSensor from "react-visibility-sensor";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -97,7 +97,7 @@ const PortfolioCard = (props: any) => {
       
           return (
             <Grow in={props.checked} key={index}>
-              <Link href="/projects/[id]" as={`/projects/${key[0]}`} passHref>
+              <Link  href="/projects/[id]" as={`/projects/${key[0]}`} passHref>
                   <div className={classes.portfolioCard}>
                     <div className={classes.picture}>
                       <img
@@ -125,32 +125,7 @@ const PortfolioCard = (props: any) => {
               </Link>
             </Grow>
           );
-        } else if (
-          key[1].tags.responsive == true &&
-          props.skills.responsive == true
-        ) {
-          if (key[1].tags.responsive == true) {
-            return (
-              <Grow in={props.checked} key={index}>
-                <div className={classes.portfolioCard}>
-                  <div className={classes.picture}>
-                    <img
-                      className={classes.img}
-                      alt="picture of site"
-                      src={key[1].images[0]}
-                    />
-                  </div>
-                  <p style={{ color: "#907c7c", fontSize: "small" }}>Website</p>
-                  <div className={classes.contentContainer}>
-                    <div className={classes.titleContainer}>
-                      <span className={classes.title}>{key[1].title}</span>
-                      <span className={classes.text}> {key[1].catchLine} </span>
-                    </div>
-                  </div>
-                </div>
-              </Grow>
-            );
-          }
+        
         } else if (
           key[1].tags.fullstack == true &&
           props.skills.fullstack == true
@@ -177,34 +152,8 @@ const PortfolioCard = (props: any) => {
               </Grow>
             );
           }
-        } else if (
-          key[1].tags.restful == true &&
-          props.skills.restful == true
-        ) {
-          if (key[1].tags.restful == true) {
-            return (
-              <Grow in={props.checked} key={index}>
-                <div className={classes.portfolioCard}>
-                  <div className={classes.picture}>
-                    <img
-                      className={classes.img}
-                      alt="picture of site"
-                      src={key[1].images[0]}
-                    />
-                  </div>
-                  <p style={{ color: "#907c7c", fontSize: "small" }}>Website</p>
-                  <div className={classes.contentContainer}>
-                    <div className={classes.titleContainer}>
-                      <span className={classes.title}>{key[1].title}</span>
-                      <span className={classes.text}> {key[1].catchLine} </span>
-                    </div>
-                  </div>
-                </div>
-              </Grow>
-            );
-          }
-        } else if (key[1].tags.web == true && props.skills.web == true) {
-          if (key[1].tags.web == true) {
+        } else if (key[1].tags.frontend == true && props.skills.frontend == true) {
+          if (key[1].tags.frontend == true) {
             return (
               <Grow in={props.checked} key={index}>
                 <div className={classes.portfolioCard}>
@@ -227,7 +176,7 @@ const PortfolioCard = (props: any) => {
             );
           }
         }
-      })}{" "}
+      })}
     </>
   );
 };

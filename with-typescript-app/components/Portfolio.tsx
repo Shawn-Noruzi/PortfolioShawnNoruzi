@@ -67,13 +67,12 @@ const useStyles = makeStyles((theme: Theme) =>
 const Portfolio = () => {
   const [skills, setSkills] = useState({
     all: true,
-    web: false,
-    responsive: false,
+    frontend: false,
     fullstack: false,
-    restful: false,
   });
   const classes = useStyles();
   let [active, setActive] = useState(true);
+  let [hasBeenVisible, setHasBeenVisible] = useState(false);
   const [checked, setChecked] = React.useState(true);
   function handleChange(props: any) {
     setChecked(false);
@@ -83,12 +82,24 @@ const Portfolio = () => {
 
     setSkills(props);
   }
+ 
   return (
     <VizSensor
       partialVisibility
       onChange={(isVisible) => {
+        let count = 0;
+        if (active && hasBeenVisible) {
+          return;
+        }
+
         setActive(isVisible);
+        count++;
+
+        if (count >= 1) {
+          setHasBeenVisible(true);
+        }
       }}
+      active={hasBeenVisible ? !active : true}
     >
       <div id={"Portfolio"}>
         <Grow in={active} timeout={1000}>
@@ -104,10 +115,8 @@ const Portfolio = () => {
               onClick={() =>
                 handleChange({
                   all: true,
-                  web: true,
-                  responsive: true,
+                  frontend: true,
                   fullstack: true,
-                  restful: true,
                 })
               }
               className={skills.all ? classes.isActiveButton : classes.button}
@@ -121,34 +130,13 @@ const Portfolio = () => {
               onClick={() =>
                 handleChange({
                   all: false,
-                  web: true,
-                  responsive: false,
+                  frontend: true,
                   fullstack: false,
-                  restful: false,
                 })
               }
-              className={skills.web ? classes.isActiveButton : classes.button}
+              className={skills.frontend ? classes.isActiveButton : classes.button}
             >
-              Web
-            </Button>
-          </Grow>
-
-          <Grow in={active} timeout={2500}>
-            <Button
-              onClick={() =>
-                handleChange({
-                  all: false,
-                  web: false,
-                  responsive: true,
-                  fullstack: false,
-                  restful: false,
-                })
-              }
-              className={
-                skills.responsive ? classes.isActiveButton : classes.button
-              }
-            >
-              Responsive
+              Front End
             </Button>
           </Grow>
 
@@ -157,10 +145,8 @@ const Portfolio = () => {
               onClick={() =>
                 handleChange({
                   all: false,
-                  web: false,
-                  responsive: false,
+                  frontend: false,
                   fullstack: true,
-                  restful: false,
                 })
               }
               className={
@@ -171,24 +157,7 @@ const Portfolio = () => {
             </Button>
           </Grow>
 
-          <Grow in={active} timeout={3500}>
-            <Button
-              onClick={() =>
-                setSkills({
-                  all: false,
-                  web: false,
-                  responsive: false,
-                  fullstack: false,
-                  restful: true,
-                })
-              }
-              className={
-                skills.restful ? classes.isActiveButton : classes.button
-              }
-            >
-              Restful
-            </Button>
-          </Grow>
+
         </div>
         <Grow in={active} timeout={2500}>
           <div className={classes.portfolioContainer}>

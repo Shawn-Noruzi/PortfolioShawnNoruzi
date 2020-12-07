@@ -13,9 +13,8 @@ import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { ArrowBackIos } from "@material-ui/icons";
 import Slide from "@material-ui/core/Slide";
-import ProjectImgText from "../../components/Projects/ProjectImgText";
-import ProjectImg from "../../components/Projects/ProjectImg";
-import ProjectDetails from "../../components/Projects/ProjectDetails";
+import Grow from "@material-ui/core/Grow";
+
 import VizSensor from "react-visibility-sensor";
 
 //custom mui styling for mui icon - root then class name apply - look @ arrow icon
@@ -25,9 +24,6 @@ const useStyles = makeStyles((theme: Theme) =>
       width: `50%`,
       margin: "0 auto",
       [theme.breakpoints.down("md")]: {
-        width: "550px",
-      },
-      [theme.breakpoints.down("sm")]: {
         width: "350px",
       },
     },
@@ -59,10 +55,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     textSpacingTitleContent: {
       [theme.breakpoints.down("md")]: {
-        width: `500px`,
-        margin: "0 auto",
-      },
-      [theme.breakpoints.down("sm")]: {
         width: `320px`,
         margin: "0 auto",
       },
@@ -231,185 +223,61 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface items {
-  img: string;
-  text: string;
-  header: string;
-}
-
-export default function project() {
+export default function ProjectDetails(props: any) {
   const classes = useStyles();
   let [active, setActive] = useState(true);
-  let [hasBeenVisible, setHasBeenVisible] = useState(false);
-  const router = useRouter();
-  const { id } = router.query;
-  const { data, error } = useSWR(`/api/projects/${id}`, Fetcher);
-
-  if (error) {
-    return (
-      <div>
-        <PagesNavbar />
-        <div
-          style={{
-            textAlign: `center`,
-            position: `relative`,
-            top: `300px`,
-            width: "50%",
-            margin: "0 auto",
-          }}
-        >
-          <Alert severity="error">This is an error alert — check it out!</Alert>
-        </div>
-      </div>
-    );
-  }
-
-  if (!data) {
-    return (
-      <div>
-        <div
-          style={{
-            textAlign: `center`,
-            position: `relative`,
-            top: `300px`,
-            width: "50%",
-            margin: "0 auto",
-          }}
-        >
-          <CircularProgress color="secondary" />;
-        </div>
-      </div>
-    );
-  }
 
   return (
     <VizSensor
       partialVisibility
-      scrollThrottle={100}
       onChange={(isVisible) => {
-        if (active && hasBeenVisible) {
-          return;
-        }
-
         setActive(isVisible);
-        setHasBeenVisible(true);
       }}
-      active={hasBeenVisible ? !active : true}
+      active={!active}
     >
-      <div>
-        <div>
-          <PagesNavbar />
-          <div className={classes.topContentContainer}>
-            <Slide timeout={300} direction="right" in={active}>
-              <div className={classes.title}>{data.title}</div>
-            </Slide>
-
-            <Slide direction="right" in={active} timeout={550}>
-              <div
-                className={clsx(classes.text, classes.textSpacingTitleContent)}
-              >
-                {data.summary}
-              </div>
-            </Slide>
-
-            <div>
-              <Slide timeout={650} direction="right" in={active}>
-                <div className={classes.title}>Overview</div>
-              </Slide>
-
-              <div>
-                {data.jobDescription.map((value: String[], index: any) => {
-                  return (
-                    <Slide
-                      timeout={750 + index * 400}
-                      direction="right"
-                      in={active}
-                    >
-                      <div
-                        style={{ display: "flex", alignItems: "baseline" }}
-                        key={index}
-                      >
-                        <ArrowRightIcon style={{ paddingTop: `7px` }} />
-
-                        <div
-                          className={clsx(
-                            classes.text,
-                            classes.textSpacingOverviewContent
-                          )}
-                        >
-                          {value}
-                        </div>
-                      </div>
-                    </Slide>
-                  );
-                })}
-              </div>
+      <Slide direction="right" in={active} timeout={1800}>
+        <div style={{ paddingLeft: "10px" }}>
+          {props.data.website != "" ? (
+            <div className={classes.spacingViewSite}>
+              <a className={classes.headerViewSite} href={props.data.website}>
+                View Site
+              </a>
             </div>
-            <ProjectDetails data={data} />
+          ) : null}
+
+          <div className={classes.headerContainer}>
+            <div className={classes.headerContentContainer}>
+              <div className={classes.header}>Client</div>
+              <div className={classes.text}>{props.data.client}</div>
+            </div>
+
+            <div className={classes.headerContentContainer}>
+              <div className={classes.header}>Date</div>
+              <div className={classes.text}>{props.data.date}</div>
+            </div>
+            <div className={classes.headerContentContainer}>
+              <div className={classes.header}>Role</div>
+              <div className={classes.text}>{props.data.role}</div>
+            </div>
           </div>
 
-          {data.content.map((value: items, index: any) => {
-            // flip the image and the text if the index is odd
-            // function isEven(index: number) {
-            //   if (index % 2 == 0) return true;
-            //   else return false;
-            // }
-
-            // const flip = isEven(index);
-            // flexWrap: flip ? "wrap-reverse" : "nowrap",
-            if (value.text) {
-              return <ProjectImgText value={value} index={index} />;
-            } else if (value.img != "none") {
-              return <ProjectImg value={value} />;
-            }
-          })}
-
-          <div className={classes.navButtons}>
-            <Link href={"/"}>
-              <div className={classes.navTextLeft}>
-                <ArrowBackIos className={classes.root} /> Go Home
-              </div>
-            </Link>
-            <Link href={`/projects/${data.nextProject}`}>
-              <div className={classes.navTextRight}>
-                {data.nextProjectTitle}
-                <ArrowForwardIosIcon className={classes.root} />
-              </div>
-            </Link>
+          <div>
+            <div className={classes.header}>Tech Used</div>
+            <div className={classes.techContainer}>
+              {props.data.techSkills.map((value: String[], index: any) => {
+                return (
+                  <div
+                    style={{ display: "flex", alignItems: "center" }}
+                    key={index}
+                  >
+                    <div className={classes.button}>{value}</div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
-        <div className={classes.footer}>
-          © Shawn Noruzi 2020. All Rights Reserved
-        </div>
-      </div>
+      </Slide>
     </VizSensor>
   );
 }
-
-// const getStaticProps: GetStaticProps = async ({params}) => {
-
-//  // params contains the post `id`.
-//   // If the route is like /posts/1, then params.id is 1
-
-//   const res = await fetch(`api/projects/${params.id}`)
-
-//   const post = await res.json()
-//   console.log('params', params)
-//   // Pass post data to the page via props
-//   return { props: { post } }
-// }
-
-// // const getStaticPaths: GetStaticPaths = async () => {
-
-// //   const res = await fetch('https://.../posts')
-// //   const props = await res.json()
-
-// //   // Get the paths we want to pre-render based on posts
-// //   const paths = posts.map((post) => ({
-// //     params: { id: post.id },
-// //   }))
-
-// //   // We'll pre-render only these paths at build time.
-// //   // { fallback: false } means other routes should 404.
-// //   return { paths, fallback: false }
-// // }
