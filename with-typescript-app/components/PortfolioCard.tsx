@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Grow from "@material-ui/core/Grow";
 import Link from "next/link";
-
 import { jobData } from "../utils/PortfolioData";
 
 const useStyles = makeStyles((theme: Theme) =>
