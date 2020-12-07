@@ -80,102 +80,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
       },
     },
-
-    header: {
-      font: `24px 'ProximaNovaSbold', Arial`,
-      letterSpacing: `5px`,
-    },
-
-    headerProject: {
-      font: `24px 'ProximaNovaSbold', Arial`,
-      letterSpacing: `5px`,
-      color: "white",
-      marginBottom: `30px`,
-    },
-    textProject: {
-      font: `16px/34px 'HelveticaNeue_Thin', Arial`,
-      color: "white",
-    },
-    headerViewSite: {
-      font: `24px 'ProximaNovaSbold', Arial`,
-      letterSpacing: `5px`,
-      marginRight: `100px`,
-      textDecoration: `none`,
-    },
-    spacingViewSite: {
-      paddingTop: "30px",
-    },
-    headerContainer: {
-      display: "flex",
-      marginBottom: "20px",
-
-      [theme.breakpoints.down("md")]: {
-        width: "330px",
-        display: `flex`,
-        flexWrap: `wrap`,
-      },
-    },
-    headerContentContainer: {
-      width: "200px",
-      marginTop: "35px",
-      [theme.breakpoints.down("md")]: {
-        width: "150px",
-      },
-    },
-    button: {
-      background: `grey`,
-      color: `white`,
-      borderRadius: `5px`,
-      width: `150px`,
-      textAlign: `center`,
-      padding: `2px`,
-      margin: `3px`,
-      boxShadow: `0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)`,
-    },
-    img: {
-      width: "1000px",
-      [theme.breakpoints.down("md")]: {
-        width: "100%",
-      },
-    },
-    imgContainer: {
-      padding: "40px",
-      background: "#202329",
-      width: `80%`,
-      display: `flex`,
-      justifyContent: `center`,
-      [theme.breakpoints.down(1500)]: {
-        width: `90%`,
-      },
-      [theme.breakpoints.down("sm")]: {
-        width: "unset",
-        padding: "10px",
-      },
-    },
-    contentContainer: {
-      display: "flex",
-      alignItems: "center",
-      flexDirection: "column",
-      background: "#e6e6e6",
-      padding: "80px",
-      [theme.breakpoints.down("md")]: {
-        padding: "0px",
-        paddingTop: "80px",
-      },
-    },
-    contentContainerFlipped: {
-      background: "red",
-    },
-    techContainer: {
-      display: "flex",
-      marginBottom: `75px`,
-      marginTop: `20px`,
-      width: `700px`,
-      flexWrap: `wrap`,
-      [theme.breakpoints.down("md")]: {
-        width: "330px",
-      },
-    },
     navButtons: {
       display: "flex",
     },
@@ -211,19 +115,6 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       [theme.breakpoints.down("md")]: {
         fontSize: "15px",
-      },
-    },
-    contentTitleTextContainer: {
-      padding: "40px",
-      background: "#202329",
-      marginTop: "50px",
-      width: `80%`,
-      display: `flex`,
-      justifyContent: `end`,
-      flexDirection: `column`,
-      marginBottom: "75px",
-      [theme.breakpoints.down("md")]: {
-        width: `100%`,
       },
     },
     footer: {

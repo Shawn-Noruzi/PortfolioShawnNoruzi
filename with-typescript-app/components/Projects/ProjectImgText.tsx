@@ -6,32 +6,6 @@ import VizSensor from "react-visibility-sensor";
 //custom mui styling for mui icon - root then class name apply - look @ arrow icon
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    title: {
-      font: ` 45px/130% 'HelveticaNeue_Light', Arial`,
-      color: ` #333`,
-      maxWidth: `750px`,
-      padding: `55px 0px 0px`,
-      [theme.breakpoints.down("md")]: {
-        paddingLeft: "8px",
-        padding: `20px 0px 0px`,
-      },
-    },
-
-    text: {
-      textAlign: "left",
-      color: "#333",
-      width: ` 70%`,
-      font: `16px/34px 'HelveticaNeue_Thin', Arial`,
-      [theme.breakpoints.down("md")]: {
-        width: `unset`,
-      },
-    },
-
-    header: {
-      font: `24px 'ProximaNovaSbold', Arial`,
-      letterSpacing: `5px`,
-    },
-
     headerProject: {
       font: `24px 'ProximaNovaSbold', Arial`,
       letterSpacing: `5px`,
@@ -43,23 +17,6 @@ const useStyles = makeStyles((theme: Theme) =>
       color: "white",
     },
 
-    headerContainer: {
-      display: "flex",
-      marginBottom: "20px",
-
-      [theme.breakpoints.down("md")]: {
-        width: "330px",
-        display: `flex`,
-        flexWrap: `wrap`,
-      },
-    },
-    headerContentContainer: {
-      width: "200px",
-      marginTop: "35px",
-      [theme.breakpoints.down("md")]: {
-        width: "150px",
-      },
-    },
     img: {
       width: "1000px",
       [theme.breakpoints.down("md")]: {
@@ -104,10 +61,6 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down("md")]: {
         width: `100%`,
       },
-    },
-
-    background: {
-      background: "#e6e6e6",
     },
   })
 );
