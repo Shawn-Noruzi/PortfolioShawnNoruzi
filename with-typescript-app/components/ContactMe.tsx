@@ -86,7 +86,6 @@ export default function ContactMe() {
     <VizSensor
       partialVisibility
       onChange={(isVisible) => {
-   
         if (active && hasBeenVisible) {
           return;
         }
@@ -95,7 +94,6 @@ export default function ContactMe() {
         setHasBeenVisible(true);
       }}
       active={hasBeenVisible ? !active : true}
-     
     >
       <div id={"Contact"}>
         <Grow in={active} timeout={1000}>

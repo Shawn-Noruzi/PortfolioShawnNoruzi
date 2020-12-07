@@ -123,16 +123,14 @@ const TopSection = (props: any) => {
 
       <VizSensor
         onChange={(isVisible) => {
-
           if (active && hasBeenVisible) {
             return;
           }
-  
+
           setActive(isVisible);
           setHasBeenVisible(true);
         }}
         active={hasBeenVisible ? !active : true}
-        
       >
         <Fade in={active} timeout={2000}>
           <div className={classes.TopSectionText}>
@@ -148,7 +146,7 @@ const TopSection = (props: any) => {
             </div>
             <Fade in={active} timeout={4000}>
               <p className={classes.subTitle}>
-                Front End Developer | UX and UI Designer{" "}
+                Front End Developer | UX and UI Designer
               </p>
             </Fade>
             <Fade in={active} timeout={6000}>

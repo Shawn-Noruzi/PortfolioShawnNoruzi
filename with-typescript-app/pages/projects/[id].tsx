@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import clsx from "clsx";
 import Link from "next/link";
-// import { GetStaticProps, GetStaticPaths } from 'next'
 import useSWR from "swr";
 import Alert from "@material-ui/lab/Alert";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -386,30 +385,3 @@ export default function project() {
   );
 }
 
-// const getStaticProps: GetStaticProps = async ({params}) => {
-
-//  // params contains the post `id`.
-//   // If the route is like /posts/1, then params.id is 1
-
-//   const res = await fetch(`api/projects/${params.id}`)
-
-//   const post = await res.json()
-//   console.log('params', params)
-//   // Pass post data to the page via props
-//   return { props: { post } }
-// }
-
-// // const getStaticPaths: GetStaticPaths = async () => {
-
-// //   const res = await fetch('https://.../posts')
-// //   const props = await res.json()
-
-// //   // Get the paths we want to pre-render based on posts
-// //   const paths = posts.map((post) => ({
-// //     params: { id: post.id },
-// //   }))
-
-// //   // We'll pre-render only these paths at build time.
-// //   // { fallback: false } means other routes should 404.
-// //   return { paths, fallback: false }
-// // }
