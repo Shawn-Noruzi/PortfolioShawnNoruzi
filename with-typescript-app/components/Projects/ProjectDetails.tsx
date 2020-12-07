@@ -1,20 +1,6 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
-import clsx from "clsx";
-import Link from "next/link";
-// import { GetStaticProps, GetStaticPaths } from 'next'
-import useSWR from "swr";
-import Alert from "@material-ui/lab/Alert";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import { Fetcher } from "../../utils/Fetcher";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import PagesNavbar from "../../components/pagesNavbar";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import { ArrowBackIos } from "@material-ui/icons";
 import Slide from "@material-ui/core/Slide";
-import Grow from "@material-ui/core/Grow";
-
 import VizSensor from "react-visibility-sensor";
 
 //custom mui styling for mui icon - root then class name apply - look @ arrow icon
