@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 
 import Link from "next/link";
@@ -9,31 +9,8 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    "@global": {
-      "html, body": {
-        margin: 0,
-        padding: 0,
-        scrollBehavior: "smooth",
-      },
-    },
-
     menuButton: {
       marginRight: theme.spacing(10),
-    },
-    title: {
-      textDecoration: "none",
-      fontFamily:
-        "Roboto,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
-      borderLeft: "solid",
-      paddingLeft: "10px",
-      letterSpacing: "10px",
-      color: "white",
-      [theme.breakpoints.up("sm")]: {
-        display: "block",
-        fontSize: "xx-large",
-        fontWeight: "400",
-        letterSpacing: "10px",
-      },
     },
 
     linkText: {
@@ -48,43 +25,6 @@ const useStyles = makeStyles((theme: Theme) =>
       "&:hover": {
         transition: "0.3s",
         fontSize: `23px`,
-      },
-    },
-    activeLink: {
-      marginBottom: `20px`,
-      position: "relative",
-      textDecoration: "none",
-      color: "white",
-      fontWeight: "bolder",
-      transition: "0.3s",
-      fontSize: `23px`,
-
-      fontFamily:
-        "Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
-    },
-    gutters: {
-      paddingLeft: theme.spacing(2),
-      paddingRight: theme.spacing(2),
-      [theme.breakpoints.up("lg")]: {
-        paddingLeft: theme.spacing(4),
-        paddingRight: theme.spacing(4),
-      },
-    },
-    inputRoot: {
-      color: "inherit",
-    },
-
-    sectionDesktop: {
-      display: "none",
-      [theme.breakpoints.up("md")]: {
-        display: "flex",
-        margin: `0 auto`,
-      },
-    },
-    sectionMobile: {
-      display: "flex",
-      [theme.breakpoints.up("md")]: {
-        display: "none",
       },
     },
     menu: {

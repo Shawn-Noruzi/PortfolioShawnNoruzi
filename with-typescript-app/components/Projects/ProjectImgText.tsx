@@ -58,9 +58,7 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: `end`,
       flexDirection: `column`,
       marginBottom: "75px",
-      [theme.breakpoints.down("md")]: {
-        width: `100%`,
-      },
+
     },
 
     background: {

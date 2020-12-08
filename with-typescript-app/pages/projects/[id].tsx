@@ -118,6 +118,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     footer: {
+      font: "16px/34px 'HelveticaNeue_Thin', Arial",
       background: "rgb(32, 35, 41)",
       margin: "0 auto",
       color: "white",

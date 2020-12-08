@@ -3,7 +3,7 @@ import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    text: {
+    textFooter: {
       color: "white",
       fontWeight: "normal",
       fontSize: "large",
@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme: Theme) =>
       background: `#00c0ffa6`,
       boxShadow: `2px 2px 6px 0px black`,
     },
-    links: {
+    linksFooter: {
       textDecoration: `none`,
       fontFamily:
         "HelveticaNeue_Light,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
@@ -93,51 +93,51 @@ export default function Footer() {
       <div className={classes.navAndAboutContainer}>
         <div className={classes.linksContainer}>
      
-            <p className={classes.text}>Navigation</p>
-            <a className={classes.links} href="#About">
+            <p className={classes.textFooter}>Navigation</p>
+            <a className={classes.linksFooter} href="#About">
               About
             </a>
-            <a href="#Portfolio" className={classes.links}>
+            <a href="#Portfolio" className={classes.linksFooter}>
               Portfolio
             </a>
 
-            <a className={classes.links} href="#Contact">
+            <a className={classes.linksFooter} href="#Contact">
               Contacts
             </a>
           </div>
           <div className={classes.linksContainer}>
-            <p className={classes.text}>About The Site</p>
-            <a href="tel:+1 604 704 5402" className={classes.links}>
+            <p className={classes.textFooter}>About The Site</p>
+            <a href="tel:+1 604 704 5402" className={classes.linksFooter}>
               Privacy Policy
             </a>
             <a
-              className={classes.links}
+              className={classes.linksFooter}
               href="https://www.linkedin.com/in/shawn-noruzi/"
             >
               Cookie Policy
             </a>
-            <a className={classes.links} href="https://github.com/Shawn-Noruzi">
+            <a className={classes.linksFooter} href="https://github.com/Shawn-Noruzi">
               Terms Of Use
             </a>
           </div>
         </div>
 
         <div className={classes.linksContainer}>
-          <p className={classes.text}>Contacts</p>
-          <a href="tel:+1 604 704 5402" className={classes.links}>
+          <p className={classes.textFooter}>Contacts</p>
+          <a href="tel:+1 604 704 5402" className={classes.linksFooter}>
             Phone : +1 604 704 5402
           </a>
           <a
-            className={classes.links}
+            className={classes.linksFooter}
             href="https://www.linkedin.com/in/shawn-noruzi/"
           >
             linkedin.com/in/shawn-noruzi
           </a>
-          <a href="mailto:Shawn.Noruzi@gmail.com" className={classes.links}>
+          <a href="mailto:Shawn.Noruzi@gmail.com" className={classes.linksFooter}>
             shawn.noruzi@Gmail.com
           </a>
           <a
-            className={classes.links}
+            className={classes.linksFooter}
             href="/static/ShayanNoruziResume.docx"
             download
           >
