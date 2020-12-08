@@ -355,13 +355,13 @@ export const Projects: ProjectData = [
       {
         img: "/static/images/Port2.PNG",
         header: "Features",
-        text: `Viewport visibility - I tried using VizSensor and useVisibility libraries to handle viewport visibility. I found that VizSensor was by far the more practicle and less buggy of the two. The visibility was then reference to the navbar triggering styling changes and also applying animations to each component as the user scrolls down a page. Mapping data - using my own custom API to pull data from a local file, I then mapped and rendered the data. I also took note of how to use getInitialProps and getStaticProps to pull in API data on build rather than request for external API using applications.`,
+        text: `Viewport visibility - I tried using VizSensor and useVisibility libraries to handle viewport visibility. I found that VizSensor was by far the more practicle and less buggy of the two. The visibility was then reference to the navbar triggering styling changes and also applying animations to each component as the user scrolls down a page.\n\nMapping data - using my own custom API to pull data from a local file, I then mapped and rendered the data. I also took note of how to use getInitialProps and getStaticProps to pull in API data on build rather than request for external API using applications.`,
       },
       {
         img: "/static/images/Port3.PNG",
         header: "More Features",
         text:
-          "Conditional rendering - I used Terniary operators here but also noted how switch statements can be highly practical when there are many use cases for the data. Responsive design - I crafted the site with a mobile first approach as the target demographics are often mobile users for sites. State Management - using useState, useEffect and some prop handling I was able to create style changing user navigation, on scroll animations, as well as rendering of different data sets and components. ",
+          "Conditional rendering - I used Terniary operators here but also noted how switch statements can be highly practical when there are many use cases for the data.\n\nResponsive design - I crafted the site with a mobile first approach as the target demographics are often mobile users for sites.\n\nState Management - using useState, useEffect and some prop handling I was able to create style changing user navigation, on scroll animations, as well as rendering of different data sets and components. ",
       },
       {
         img: "/static/images/Port4.PNG",

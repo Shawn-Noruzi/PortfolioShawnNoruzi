@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
       font: `21px 'HelveticaNeue_Thin', Arial`,
       lineHeight: 2,
       color: "white",
+      whiteSpace: `pre-wrap`
     },
 
     img: {
