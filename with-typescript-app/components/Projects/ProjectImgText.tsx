@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: `30px`,
     },
     textProject: {
-      font: `16px/34px 'HelveticaNeue_Thin', Arial`,
+      font: `21px 'HelveticaNeue_Thin', Arial`,
       color: "white",
     },
 

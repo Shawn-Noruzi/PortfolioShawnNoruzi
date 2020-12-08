@@ -12,6 +12,13 @@ const useStyles = makeStyles((theme: Theme) =>
         width: "100%",
       },
     },
+    imgContainer: {
+      padding: `40px 40px 0px 40px`,
+      background: "#202329",
+      "&:last-child": { paddingBottom: "40px" },
+      display: `flex`,
+      justifyContent: `center`,
+    },
   })
 );
 
@@ -29,15 +36,7 @@ export default function ProjectImg(props: any) {
       active={!active}
     >
       <Grow in={active} timeout={1800}>
-        <div
-          style={{
-            padding: "40px",
-            background: "#202329",
-            width: `100%`,
-            display: `flex`,
-            justifyContent: `center`,
-          }}
-        >
+        <div className={classes.imgContainer}>
           <img src={props.value.img} className={classes.img} />
         </div>
       </Grow>

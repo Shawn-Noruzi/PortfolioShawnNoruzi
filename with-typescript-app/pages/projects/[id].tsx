@@ -42,14 +42,14 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
 
-    detailIcons:{
-      fontSize: '1rem'
+    detailIcons: {
+      fontSize: "1rem",
     },
 
-    navIcons:{
-      fontSize: '2rem',
+    navIcons: {
+      fontSize: "2rem",
       [theme.breakpoints.down("md")]: {
-        fontSize: '1rem',
+        fontSize: "1rem",
       },
     },
 
@@ -234,7 +234,9 @@ export default function project() {
                         key={index}
                       >
                         <div>
-                          <ArrowRightIcon classes={{root: classes.detailIcons }} />
+                          <ArrowRightIcon
+                            classes={{ root: classes.detailIcons }}
+                          />
                         </div>
 
                         <div
@@ -253,33 +255,34 @@ export default function project() {
             </div>
             <ProjectDetails data={data} />
           </div>
+          <div style={{ background: "#202329" }}>
+            {data.content.map((value: items, index: any) => {
+              // flip the image and the text if the index is odd
+              // function isEven(index: number) {
+              //   if (index % 2 == 0) return true;
+              //   else return false;
+              // }
 
-          {data.content.map((value: items, index: any) => {
-            // flip the image and the text if the index is odd
-            // function isEven(index: number) {
-            //   if (index % 2 == 0) return true;
-            //   else return false;
-            // }
-
-            // const flip = isEven(index);
-            // flexWrap: flip ? "wrap-reverse" : "nowrap",
-            if (value.text) {
-              return <ProjectImgText value={value} index={index} />;
-            } else if (value.img != "none") {
-              return <ProjectImg value={value} />;
-            }
-          })}
+              // const flip = isEven(index);
+              // flexWrap: flip ? "wrap-reverse" : "nowrap",
+              if (value.text) {
+                return <ProjectImgText value={value} index={index} />;
+              } else if (value.img != "none") {
+                return <ProjectImg value={value} />;
+              }
+            })}
+          </div>
 
           <div className={classes.navButtons}>
             <Link href={"/"}>
               <div className={classes.navTextLeft}>
-                <ArrowBackIos classes={{root: classes.navIcons }}  /> Go Home
+                <ArrowBackIos classes={{ root: classes.navIcons }} /> Go Home
               </div>
             </Link>
             <Link href={`/projects/${data.nextProject}`}>
               <div className={classes.navTextRight}>
                 {data.nextProjectTitle}
-                <ArrowForwardIosIcon classes={{root: classes.navIcons }}  />
+                <ArrowForwardIosIcon classes={{ root: classes.navIcons }} />
               </div>
             </Link>
           </div>
