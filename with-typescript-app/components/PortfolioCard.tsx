@@ -108,7 +108,7 @@ const PortfolioCard = (props: any) => {
                       marginLeft: "10px",
                     }}
                   >
-                    Website
+                    {key[1].tech}
                   </p>
                   <div className={classes.contentContainer}>
                     <div className={classes.titleContainer}>

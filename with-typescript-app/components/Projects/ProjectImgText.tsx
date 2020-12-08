@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     textProject: {
       font: `21px 'HelveticaNeue_Thin', Arial`,
+      lineHeight: 2,
       color: "white",
     },
 

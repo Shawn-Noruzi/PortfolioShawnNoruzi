@@ -7,11 +7,8 @@ export type PortfolioData = {
     };
     title: string;
     catchLine: string;
-    role: string;
-    jobDescription: string[];
     images: string[];
-    date: string;
-    nextProject: string;
+    tech: string;
   };
   placespeak: {
     tags: {
@@ -21,11 +18,8 @@ export type PortfolioData = {
     };
     title: string;
     catchLine: string;
-    role: string;
-    jobDescription: string[];
     images: string[];
-    date: string;
-    nextProject: string;
+    tech: string;
   };
   mentor: {
     tags: {
@@ -35,11 +29,8 @@ export type PortfolioData = {
     };
     title: string;
     catchLine: string;
-    role: string;
-    jobDescription: string[];
     images: string[];
-    date: string;
-    nextProject: string;
+    tech: string;
   };
   custom: {
     tags: {
@@ -49,11 +40,19 @@ export type PortfolioData = {
     };
     title: string;
     catchLine: string;
-    role: string;
-    jobDescription: string[];
     images: string[];
-    date: string;
-    nextProject: string;
+    tech: string;
+  };
+  portfolio: {
+    tags: {
+      all: boolean;
+      frontend: boolean;
+      fullstack: boolean;
+    };
+    title: string;
+    catchLine: string;
+    images: string[];
+    tech: string;
   };
 };
 
@@ -66,19 +65,8 @@ export const jobData: PortfolioData = {
     },
     title: "GitPay",
     catchLine: "Bounty website for developers to find paid work",
-    role: "Front End Engineer",
-    jobDescription: [
-      "Reduced user flow issues through the improvement of UX/UI which increased CTR by 50% through the creation of a landing page using React, JavaScript and Bootstrap/CSS",
-      "Increased browser support by 50% through an implementation of webpack and babel",
-      "Provided on-demand developer support to create new or better solutions for bug fixes, design patterns and implementations resulting in more streamlined development/hotfixes",
-    ],
-    images: [
-      "/static/images/G1.PNG",
-      "/static/images/G2.PNG",
-      "/static/images/G3.PNG",
-    ],
-    date: "05/2020 - 11/2020",
-    nextProject: "placespeak",
+    images: ["/static/images/G1.PNG"],
+    tech: "React, Bootstrap, Redux",
   },
   placespeak: {
     tags: {
@@ -88,19 +76,8 @@ export const jobData: PortfolioData = {
     },
     title: "PlaceSpeak",
     catchLine: "Geolocation constituent consulting",
-    role: "Front End Engineer",
-    jobDescription: [
-      "Overhauled all user interfaces which increased site traffic by more than 60%  using React, Redux, Bootstrap/CSS, JavaScript, and JQuery ",
-      "Resolved bugs pertaining to asynchronous requests, data pipeline/flow, React/Redux state management and CSS issues resulting in 70% reduction of technical debt, improved usability and 50% increase in load times",
-      "Tested and documented all produced code to ensure smooth deliverables",
-    ],
-    images: [
-      "/static/images/P1.PNG",
-      "/static/images/P2.PNG",
-      "/static/images/P3.PNG",
-    ],
-    date: "06/2019 - 01/2020",
-    nextProject: "mentor",
+    images: ["/static/images/P1.PNG"],
+    tech: "React, Bootstrap / CSS, Redux, JQuery, Django, RESTful",
   },
   mentor: {
     tags: {
@@ -110,17 +87,8 @@ export const jobData: PortfolioData = {
     },
     title: "Open Mentorship",
     catchLine: "Tinder-Like mentor finding app.",
-    role: "Front End Engineer",
-    jobDescription: [
-      "Developed a mentor-mentee matching application for engineers with a projected reach of 100,000 initial users using React, Styled-Components/Material-UI/CSS, JavaScript, and Axios",
-      "Collaborated closely with the team to support projects during all phases of delivery",
-      "Identified innovative ideas and proof of concepts according to project requirements",
-      "Tested to identify bugs and technical issues before and after deploying reducing technical debt",
-      "Documented bug reports, tickets, and any code changes",
-    ],
-    images: ["/static/images/M1.PNG", "/static/images/M2.PNG"],
-    date: "05/2020 – 11/2020",
-    nextProject: "custom",
+    images: ["/static/images/M1.PNG"],
+    tech: "React, Bootstrap, Redux, Axios",
   },
   custom: {
     tags: {
@@ -130,17 +98,20 @@ export const jobData: PortfolioData = {
     },
     title: "Slider Portfolio",
     catchLine: "Innovative way to present portfolio data",
-    role: "Front End Engineer",
-    jobDescription: [
-      "Developed a 'slide' based visual presentation using AwesomeSlider, Next.js, React, Javascript, Material-UI.",
-    ],
-    images: [
-      "/static/images/N1.PNG",
-      "/static/images/N2.PNG",
-      "/static/images/N3.PNG",
-    ],
-    date: "11/2020",
-    nextProject: "gitpay",
+    images: ["/static/images/N1.PNG"],
+    tech: "React, Material-UI, Awesome-Slider API, Next.js",
+  },
+
+  portfolio: {
+    tags: {
+      all: true,
+      frontend: true,
+      fullstack: true,
+    },
+    title: "Portfolio",
+    catchLine: "Showcases myself and my work",
+    images: ["/static/images/Port1.PNG"],
+    tech: "React, Next.js, Typescript, SWR, Material-UI",
   },
 };
 
@@ -150,6 +121,22 @@ interface items {
   header: string;
 }
 export type ProjectData = [
+  {
+    id: string;
+    client: string;
+    techSkills: string[];
+    content: items[];
+    summary: string;
+    website: string;
+    title: string;
+    catchLine: string;
+    role: string;
+    jobDescription: string[];
+    images: string[];
+    date: string;
+    nextProject: string;
+    nextProjectTitle: string;
+  },
   {
     id: string;
     client: string;
@@ -349,5 +336,38 @@ export const Projects: ProjectData = [
     date: "11/2020",
     nextProject: "gitpay",
     nextProjectTitle: "GitPay",
+  },
+
+  {
+    id: "portfolio",
+    title: "Portfolio",
+    client: "Self Project",
+    content: [
+      {
+        img: "/static/images/Port1.PNG",
+        header: "Next.js and TypeScript",
+        text:
+          "I wanted to learn the Next.js framework and how I can leverage its server-side app capabilities. Its routing engine allowed for seemless navigation and I was able to use my component-logic of react to create the pages. I was able to use Next.js's Static Generation to fetch data at build time since the data is constant, keeping things highly performant. TypeScript added increased overhead in exchange for better debugging, type safety, easier understanding of data intake/output, less testing and less bugs. I look forward to doing all my projects in TypeScript from now on.",
+      },
+      { img: "/static/images/Port2.PNG", header: "Features", text: `Viewport visibility - I tried using VizSensor and useVisibility libraries to handle viewport visibility. I found that VizSensor was by far the more practicle and less buggy of the two. The visibility was then reference to the navbar triggering styling changes and also applying animations to each component as the user scrolls down a page. Mapping data - using my own custom API to pull data from a local file, I then mapped and rendered the data. I also took note of how to use getInitialProps and getStaticProps to pull in API data on build rather than request for external API using applications.` },
+      { img: "/static/images/Port3.PNG", header: "More Features", text: "Conditional rendering - I used Terniary operators here but also noted how switch statements can be highly practical when there are many use cases for the data. Responsive design - I crafted the site with a mobile first approach as the target demographics are often mobile users for sites. State Management - using useState, useEffect and some prop handling I was able to create style changing user navigation, on scroll animations, as well as rendering of different data sets and components. " },
+    ],
+    techSkills: ["React", "Next.js", "TypeScript", "Material-UI", "SWR"],
+    summary:
+      "After creating the slider portfolio, I wanted to make something a bit more conventional while also picking up a few new skils - mainly typescript. My focus was on creating a responsive, statically typed, easy to navigate and consume site that would utilize a single source of truth for its data to create many components.",
+    website: "https://portfolio-shawn-noruzi.shawn-noruzi.vercel.app/",
+    catchLine: "",
+    role: "Front End Engineer",
+    jobDescription: [
+      "Designed and Developed a portfolio site to learn Typescript and explore the Next.js ecosystem.",
+    ],
+    images: [
+      "/static/images/Port1.PNG",
+      "/static/images/Port2.PNG",
+      "/static/images/Port3.PNG",
+    ],
+    date: "2020",
+    nextProject: "placespeak",
+    nextProjectTitle: "PlaceSpeak",
   },
 ];
