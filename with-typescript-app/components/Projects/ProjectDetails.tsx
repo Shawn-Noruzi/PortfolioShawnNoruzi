@@ -85,7 +85,7 @@ export default function ProjectDetails(props: any) {
       }}
       active={!active}
     >
-      <Slide direction="right" in={active} timeout={1800}>
+      <Slide direction="right" in={active} timeout={1000}>
         <div style={{ paddingLeft: "10px" }}>
           {props.data.website != "" ? (
             <div className={classes.spacingViewSite}>

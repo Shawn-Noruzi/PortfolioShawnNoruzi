@@ -224,7 +224,7 @@ export default function project() {
                 {data.jobDescription.map((value: String[], index: any) => {
                   return (
                     <Slide
-                      timeout={750 + index * 400}
+                      timeout={750 + index * 300}
                       direction="right"
                       in={active}
                     >
