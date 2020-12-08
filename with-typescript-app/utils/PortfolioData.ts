@@ -363,6 +363,11 @@ export const Projects: ProjectData = [
         text:
           "Conditional rendering - I used Terniary operators here but also noted how switch statements can be highly practical when there are many use cases for the data. Responsive design - I crafted the site with a mobile first approach as the target demographics are often mobile users for sites. State Management - using useState, useEffect and some prop handling I was able to create style changing user navigation, on scroll animations, as well as rendering of different data sets and components. ",
       },
+      {
+        img: "/static/images/Port4.PNG",
+        header: "Site Analytics",
+        text:
+          "I initially planned to use google analytics to track user web and mobile usage until I found out Next's Vercel web app provides native analytics support."},
     ],
     techSkills: ["React", "Next.js", "TypeScript", "Material-UI", "SWR"],
     summary:
