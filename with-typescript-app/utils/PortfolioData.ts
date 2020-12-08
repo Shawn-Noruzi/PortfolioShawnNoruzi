@@ -57,17 +57,18 @@ export type PortfolioData = {
 };
 
 export const jobData: PortfolioData = {
-  gitpay: {
+  portfolio: {
     tags: {
       all: true,
       frontend: true,
-      fullstack: false,
+      fullstack: true,
     },
-    title: "GitPay",
-    catchLine: "Bounty website for developers to find paid work",
-    images: ["/static/images/G1.PNG"],
-    tech: "React, Bootstrap, Redux",
+    title: "Portfolio",
+    catchLine: "Showcases myself and my work",
+    images: ["/static/images/Port1.PNG"],
+    tech: "React, Next.js, Typescript, SWR, Material-UI",
   },
+
   placespeak: {
     tags: {
       all: true,
@@ -79,6 +80,18 @@ export const jobData: PortfolioData = {
     images: ["/static/images/P1.PNG"],
     tech: "React, Bootstrap / CSS, Redux, JQuery, Django, RESTful",
   },
+  gitpay: {
+    tags: {
+      all: true,
+      frontend: true,
+      fullstack: false,
+    },
+    title: "GitPay",
+    catchLine: "Bounty website for developers to find paid work",
+    images: ["/static/images/G1.PNG"],
+    tech: "React, Bootstrap, Redux",
+  },
+
   mentor: {
     tags: {
       all: true,
@@ -102,17 +115,7 @@ export const jobData: PortfolioData = {
     tech: "React, Material-UI, Awesome-Slider API, Next.js",
   },
 
-  portfolio: {
-    tags: {
-      all: true,
-      frontend: true,
-      fullstack: true,
-    },
-    title: "Portfolio",
-    catchLine: "Showcases myself and my work",
-    images: ["/static/images/Port1.PNG"],
-    tech: "React, Next.js, Typescript, SWR, Material-UI",
-  },
+
 };
 
 interface items {
@@ -349,8 +352,17 @@ export const Projects: ProjectData = [
         text:
           "I wanted to learn the Next.js framework and how I can leverage its server-side app capabilities. Its routing engine allowed for seemless navigation and I was able to use my component-logic of react to create the pages. I was able to use Next.js's Static Generation to fetch data at build time since the data is constant, keeping things highly performant. TypeScript added increased overhead in exchange for better debugging, type safety, easier understanding of data intake/output, less testing and less bugs. I look forward to doing all my projects in TypeScript from now on.",
       },
-      { img: "/static/images/Port2.PNG", header: "Features", text: `Viewport visibility - I tried using VizSensor and useVisibility libraries to handle viewport visibility. I found that VizSensor was by far the more practicle and less buggy of the two. The visibility was then reference to the navbar triggering styling changes and also applying animations to each component as the user scrolls down a page. Mapping data - using my own custom API to pull data from a local file, I then mapped and rendered the data. I also took note of how to use getInitialProps and getStaticProps to pull in API data on build rather than request for external API using applications.` },
-      { img: "/static/images/Port3.PNG", header: "More Features", text: "Conditional rendering - I used Terniary operators here but also noted how switch statements can be highly practical when there are many use cases for the data. Responsive design - I crafted the site with a mobile first approach as the target demographics are often mobile users for sites. State Management - using useState, useEffect and some prop handling I was able to create style changing user navigation, on scroll animations, as well as rendering of different data sets and components. " },
+      {
+        img: "/static/images/Port2.PNG",
+        header: "Features",
+        text: `Viewport visibility - I tried using VizSensor and useVisibility libraries to handle viewport visibility. I found that VizSensor was by far the more practicle and less buggy of the two. The visibility was then reference to the navbar triggering styling changes and also applying animations to each component as the user scrolls down a page. Mapping data - using my own custom API to pull data from a local file, I then mapped and rendered the data. I also took note of how to use getInitialProps and getStaticProps to pull in API data on build rather than request for external API using applications.`,
+      },
+      {
+        img: "/static/images/Port3.PNG",
+        header: "More Features",
+        text:
+          "Conditional rendering - I used Terniary operators here but also noted how switch statements can be highly practical when there are many use cases for the data. Responsive design - I crafted the site with a mobile first approach as the target demographics are often mobile users for sites. State Management - using useState, useEffect and some prop handling I was able to create style changing user navigation, on scroll animations, as well as rendering of different data sets and components. ",
+      },
     ],
     techSkills: ["React", "Next.js", "TypeScript", "Material-UI", "SWR"],
     summary:
