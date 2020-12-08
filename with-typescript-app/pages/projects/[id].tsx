@@ -41,9 +41,15 @@ const useStyles = makeStyles((theme: Theme) =>
         padding: `20px 0px 0px`,
       },
     },
-    root: {
+
+    detailIcons:{
+      fontSize: '1rem'
+    },
+
+    navIcons:{
+      fontSize: '2rem',
       [theme.breakpoints.down("md")]: {
-        fontSize: "1em",
+        fontSize: '1rem',
       },
     },
 
@@ -70,20 +76,19 @@ const useStyles = makeStyles((theme: Theme) =>
     textSpacingOverviewContent: {
       [theme.breakpoints.down("md")]: {
         width: `280px`,
-
       },
     },
-    overviewTextContainer:{
-      display: "flex", alignItems: "baseline",     marginLeft: `30px`,
+    overviewTextContainer: {
+      display: "flex",
+      alignItems: "baseline",
+      marginLeft: `30px`,
       [theme.breakpoints.down("md")]: {
-        marginLeft: `10px`
-
+        marginLeft: `10px`,
       },
     },
     navButtons: {
       display: "flex",
     },
-    navIcon: {},
     navTextLeft: {
       font: ` 45px/130% 'HelveticaNeue_Light', Arial`,
       color: ` #333`,
@@ -122,7 +127,7 @@ const useStyles = makeStyles((theme: Theme) =>
       background: "rgb(32, 35, 41)",
       margin: "0 auto",
       color: "white",
-      height: "175px",
+      height: "100px",
       display: `flex`,
       justifyContent: `center`,
       paddingTop: `85px`,
@@ -228,7 +233,9 @@ export default function project() {
                         className={classes.overviewTextContainer}
                         key={index}
                       >
-                        <ArrowRightIcon style={{ paddingTop: `7px` }} />
+                        <div>
+                          <ArrowRightIcon classes={{root: classes.detailIcons }} />
+                        </div>
 
                         <div
                           className={clsx(
@@ -266,13 +273,13 @@ export default function project() {
           <div className={classes.navButtons}>
             <Link href={"/"}>
               <div className={classes.navTextLeft}>
-                <ArrowBackIos className={classes.root} /> Go Home
+                <ArrowBackIos classes={{root: classes.navIcons }}  /> Go Home
               </div>
             </Link>
             <Link href={`/projects/${data.nextProject}`}>
               <div className={classes.navTextRight}>
                 {data.nextProjectTitle}
-                <ArrowForwardIosIcon className={classes.root} />
+                <ArrowForwardIosIcon classes={{root: classes.navIcons }}  />
               </div>
             </Link>
           </div>
@@ -284,4 +291,3 @@ export default function project() {
     </VizSensor>
   );
 }
-
