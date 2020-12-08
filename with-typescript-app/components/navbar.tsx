@@ -134,6 +134,7 @@ export default function Navbar(props: any) {
     portfolio: false,
     contact: false,
   });
+  //whenever the user scrolls or gets scrolled to a compononet with a ref thats been passed in here - update the state with the boolean value 
   useEffect(() => {
     setActiveTab({
       about: props.props.isFirstVisible,

@@ -16,9 +16,9 @@ const Layout = ({
 
   title = "Noruzi | Front End Developer",
 }: Props) => {
-  const [isFirstVisible, firstRef] = useVisibility<HTMLDivElement>(-100);
-  const [isSecondVisible, secondRef] = useVisibility<HTMLDivElement>(100);
-  const [isThirdVisible, thirdRef] = useVisibility<HTMLDivElement>(100);
+  const [isFirstVisible, firstRef] = useVisibility<HTMLDivElement>(0);
+  const [isSecondVisible, secondRef] = useVisibility<HTMLDivElement>(0);
+  const [isThirdVisible, thirdRef] = useVisibility<HTMLDivElement>(0);
   return (
     <div>
       <Head>
