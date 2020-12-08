@@ -13,7 +13,6 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { ArrowBackIos } from "@material-ui/icons";
 import Slide from "@material-ui/core/Slide";
 import ProjectImgText from "../../components/Projects/ProjectImgText";
-import ProjectImg from "../../components/Projects/ProjectImg";
 import ProjectDetails from "../../components/Projects/ProjectDetails";
 import VizSensor from "react-visibility-sensor";
 
@@ -255,23 +254,19 @@ export default function project() {
             </div>
             <ProjectDetails data={data} />
           </div>
-          <div style={{ background: "#202329" }}>
-            {data.content.map((value: items, index: any) => {
-              // flip the image and the text if the index is odd
-              // function isEven(index: number) {
-              //   if (index % 2 == 0) return true;
-              //   else return false;
-              // }
 
-              // const flip = isEven(index);
-              // flexWrap: flip ? "wrap-reverse" : "nowrap",
-              if (value.text) {
-                return <ProjectImgText value={value} index={index} />;
-              } else if (value.img != "none") {
-                return <ProjectImg value={value} />;
-              }
-            })}
-          </div>
+          {data.content.map((value: items, index: any) => {
+            // flip the image and the text if the index is odd
+            // function isEven(index: number) {
+            //   if (index % 2 == 0) return true;
+            //   else return false;
+            // }
+
+            // const flip = isEven(index);
+            // flexWrap: flip ? "wrap-reverse" : "nowrap",
+
+            return <ProjectImgText value={value} index={index} />;
+          })}
 
           <div className={classes.navButtons}>
             <Link href={"/"}>

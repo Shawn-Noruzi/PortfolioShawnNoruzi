@@ -106,6 +106,19 @@ export default function Navbar() {
               height: "200px",
             }}
           >
+
+            <Link href="/" scroll={false}>
+              <a
+                onClick={() => {
+                  setTimeout(function () {
+                    openMenu();
+                  }, 800);
+                }}
+                className={classes.linkText}
+              >
+                Home
+              </a>
+            </Link>
             <Link href="/#About" scroll={false}>
               <a
                 onClick={() => {

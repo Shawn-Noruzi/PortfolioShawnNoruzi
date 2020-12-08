@@ -58,7 +58,6 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: `end`,
       flexDirection: `column`,
       marginBottom: "75px",
-
     },
 
     background: {
@@ -96,11 +95,14 @@ export default function ProjectImgText(props: any) {
             <div className={classes.imgContainer}>
               <img src={props.value.img} className={classes.img} />
             </div>
-
-            <div className={classes.contentTitleTextContainer}>
-              <div className={classes.headerProject}>{props.value.header}</div>
-              <div className={classes.textProject}>{props.value.text}</div>
-            </div>
+            {props.value.text ? (
+              <div className={classes.contentTitleTextContainer}>
+                <div className={classes.headerProject}>
+                  {props.value.header}
+                </div>
+                <div className={classes.textProject}>{props.value.text}</div>
+              </div>
+            ) : null}
           </div>
         </Grow>
       </div>

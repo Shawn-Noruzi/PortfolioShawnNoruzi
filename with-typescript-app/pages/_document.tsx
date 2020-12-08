@@ -19,8 +19,10 @@ class MyDocument extends Document {
           <link href="/fonts/fonts.css" rel="stylesheet" />
           <link href="/hamburgers.css" rel="stylesheet" />
 
+
+
         </Head>
-        <body>
+        <body style={{margin:'0px'}}>
           <Main />
           <NextScript />
         </body>

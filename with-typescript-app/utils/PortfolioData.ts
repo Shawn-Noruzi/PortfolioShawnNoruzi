@@ -4,7 +4,6 @@ export type PortfolioData = {
       all: boolean;
       frontend: boolean;
       fullstack: boolean;
-
     };
     title: string;
     catchLine: string;
@@ -64,7 +63,6 @@ export const jobData: PortfolioData = {
       all: true,
       frontend: true,
       fullstack: false,
-
     },
     title: "GitPay",
     catchLine: "Bounty website for developers to find paid work",
@@ -80,7 +78,7 @@ export const jobData: PortfolioData = {
       "/static/images/G3.PNG",
     ],
     date: "05/2020 - 11/2020",
-    nextProject: 'placespeak'
+    nextProject: "placespeak",
   },
   placespeak: {
     tags: {
@@ -102,7 +100,7 @@ export const jobData: PortfolioData = {
       "/static/images/P3.PNG",
     ],
     date: "06/2019 - 01/2020",
-    nextProject: 'mentor'
+    nextProject: "mentor",
   },
   mentor: {
     tags: {
@@ -122,7 +120,7 @@ export const jobData: PortfolioData = {
     ],
     images: ["/static/images/M1.PNG", "/static/images/M2.PNG"],
     date: "05/2020 – 11/2020",
-    nextProject: 'custom'
+    nextProject: "custom",
   },
   custom: {
     tags: {
@@ -142,7 +140,7 @@ export const jobData: PortfolioData = {
       "/static/images/N3.PNG",
     ],
     date: "11/2020",
-    nextProject: 'gitpay'
+    nextProject: "gitpay",
   },
 };
 
@@ -245,8 +243,8 @@ export const Projects: ProjectData = [
       "/static/images/G3.PNG",
     ],
     date: "2020 - Ongoing",
-    nextProject: 'placespeak',
-    nextProjectTitle: 'PlaceSpeak'
+    nextProject: "placespeak",
+    nextProjectTitle: "PlaceSpeak",
   },
   {
     id: "placespeak",
@@ -269,7 +267,8 @@ export const Projects: ProjectData = [
         img: "/static/images/PlaceSpeakNetwork.PNG",
         header:
           "Data Flow/Pipeline, Data Fetching, React Lifecycle, Redux State Management",
-        text: "Through data pipeline and flow tracing,life cycle events and proper usage of Redux state management I was able to address several issues where the data on render wasn't updating when the data was fetched.",
+        text:
+          "Through data pipeline and flow tracing,life cycle events and proper usage of Redux state management I was able to address several issues where the data on render wasn't updating when the data was fetched.",
       },
     ],
     techSkills: ["React", "Redux", "CSS", "Bootstrap"],
@@ -289,23 +288,23 @@ export const Projects: ProjectData = [
       "/static/images/P3.PNG",
     ],
     date: "2019 - 2020",
-    nextProject: 'mentor',
-    nextProjectTitle: 'Open Mentorship'
+    nextProject: "mentor",
+    nextProjectTitle: "Open Mentorship",
   },
   {
     id: "mentor",
     title: "Open Mentorship",
     client: "Open Mentorship",
     content: [
-      { img: "none", header: "", text: "" },
-      { img: "none", header: "", text: "" },
+      { img: "/static/images/M1.PNG", header: "", text: "" },
+      { img: "/static/images/M2.PNG", header: "", text: "" },
     ],
     techSkills: [
       "React",
       "Context",
       "Styled-Components",
       "Material-UI",
-      "Axios"
+      "Axios",
     ],
     summary:
       "In early 2020 I joined a start up open source project with 4 others to create a Tinder-like matching app for software developers. The goal is to create meaningful connections between people starting out and those deep in the industry. As a Front End Engineer I oversaw development at all stages of the product life cycle and created most of the front end for the project.",
@@ -321,8 +320,8 @@ export const Projects: ProjectData = [
     ],
     images: ["/static/images/M1.PNG", "/static/images/M2.PNG"],
     date: "2020",
-    nextProject: 'custom',
-    nextProjectTitle: 'Sliding Portfolio'
+    nextProject: "custom",
+    nextProjectTitle: "Sliding Portfolio",
   },
   {
     id: "custom",
@@ -348,7 +347,7 @@ export const Projects: ProjectData = [
       "/static/images/N3.PNG",
     ],
     date: "11/2020",
-    nextProject: 'gitpay',
-    nextProjectTitle: 'GitPay'
+    nextProject: "gitpay",
+    nextProjectTitle: "GitPay",
   },
 ];
