@@ -9,8 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "large",
       textAlign: `left`,
 
-      fontFamily:
-        "HelveticaNeue_Light,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
+      fontFamily: "Gotham",
       [theme.breakpoints.down("md")]: {
         margin: "0px",
       },
@@ -20,14 +19,13 @@ const useStyles = makeStyles((theme: Theme) =>
         width: `250px`,
         margin: `0 auto`,
       },
- 
+
       color: "white",
       fontWeight: "normal",
       fontSize: "medium",
       textAlign: `center`,
       paddingBottom: "30px",
-      fontFamily:
-        "HelveticaNeue_Light,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
+      fontFamily: "Gotham",
     },
     container: {
       display: `flex`,
@@ -52,8 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       flexDirection: "column",
       margin: "30px",
-      width: `210px`,
-      [theme.breakpoints.down("md")]: { width: `210px` },
+      width: `228px`,
     },
     card: {
       minWidth: 275,
@@ -63,8 +60,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     linksFooter: {
       textDecoration: `none`,
-      fontFamily:
-        "HelveticaNeue_Light,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
+      fontFamily: "Gotham",
       paddingTop: `5px`,
       paddingBottom: `5px`,
       paddingLeft: `3px`,
@@ -79,10 +75,10 @@ const useStyles = makeStyles((theme: Theme) =>
         paddingLeft: `5px`,
       },
     },
-    navAndAboutContainer:{
-      display: 'flex',
-      flexDirection:"row"
-    }
+    navAndAboutContainer: {
+      display: "flex",
+      flexDirection: "row",
+    },
   })
 );
 export default function Footer() {
@@ -90,9 +86,8 @@ export default function Footer() {
   return (
     <div className={classes.container}>
       <div className={classes.contentContainer}>
-      <div className={classes.navAndAboutContainer}>
-        <div className={classes.linksContainer}>
-     
+        <div className={classes.navAndAboutContainer}>
+          <div className={classes.linksContainer}>
             <p className={classes.textFooter}>Navigation</p>
             <a className={classes.linksFooter} href="#About">
               About
@@ -116,7 +111,10 @@ export default function Footer() {
             >
               Cookie Policy
             </a>
-            <a className={classes.linksFooter} href="https://github.com/Shawn-Noruzi">
+            <a
+              className={classes.linksFooter}
+              href="https://github.com/Shawn-Noruzi"
+            >
               Terms Of Use
             </a>
           </div>
@@ -133,7 +131,10 @@ export default function Footer() {
           >
             linkedin.com/in/shawn-noruzi
           </a>
-          <a href="mailto:Shawn.Noruzi@gmail.com" className={classes.linksFooter}>
+          <a
+            href="mailto:Shawn.Noruzi@gmail.com"
+            className={classes.linksFooter}
+          >
             shawn.noruzi@Gmail.com
           </a>
           <a

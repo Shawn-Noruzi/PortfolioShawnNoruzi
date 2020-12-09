@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "390px",
       margin: `30px 20px 20px 20px`,
       height: `150px`,
-      font: `16px/34px 'HelveticaNeue_Thin', Arial`,
+      font: `17px/34px 'Baskerville', Arial`,
       [theme.breakpoints.down("md")]: {
         margin: ` 0 auto`,
         marginTop: ` 30px`,
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
     title: {
-      font: ` 45px/130% 'HelveticaNeue_Light', Arial`,
+      font: ` 45px/130% 'Gotham', Arial`,
       color: ` #333`,
       margin: `0 auto`,
       maxWidth: `750px`,
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     subTitle: {
-      font: ` 45px/130% 'HelveticaNeue_Light', Arial`,
+      font: ` 45px/130% 'Gotham', Arial`,
       color: ` #333`,
       margin: `0 auto`,
       maxWidth: `750px`,
@@ -67,8 +67,8 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     textHeader: {
-      font: `24px 'ProximaNovaSbold', Arial`,
-      letterSpacing: `5px`,
+      font: `24px 'GothamBold', Arial`,
+      letterSpacing: `3px`,
     },
     textCard: {
       textAlign: "center",

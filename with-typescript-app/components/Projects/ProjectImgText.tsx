@@ -7,13 +7,13 @@ import VizSensor from "react-visibility-sensor";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     headerProject: {
-      font: `24px 'ProximaNovaSbold', Arial`,
+      font: `24px 'GothamBold', Arial`,
       letterSpacing: `5px`,
       color: "white",
       marginBottom: `30px`,
     },
     textProject: {
-      font: `21px 'HelveticaNeue_Thin', Arial`,
+      font: `21px 'Gotham', Arial`,
       lineHeight: 2,
       color: "white",
       whiteSpace: `pre-wrap`

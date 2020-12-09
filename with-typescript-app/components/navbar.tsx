@@ -22,8 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       textDecoration: "none",
-      fontFamily:
-        "Roboto,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
+      fontFamily: "Gotham",
       borderLeft: "solid",
       paddingLeft: "10px",
       letterSpacing: "10px",
@@ -43,13 +42,11 @@ const useStyles = makeStyles((theme: Theme) =>
       color: "white",
       fontWeight: "normal",
       fontSize: "larger",
-      fontFamily:
-        "Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
+      fontFamily: "Gotham",
       "&:hover": {
         transition: "0.3s",
         fontSize: `23px`,
       },
-
     },
     activeLink: {
       marginBottom: `20px`,
@@ -60,9 +57,7 @@ const useStyles = makeStyles((theme: Theme) =>
       transition: "0.3s",
       fontSize: `23px`,
 
-      fontFamily:
-        "Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
-
+      fontFamily: "Gotham",
     },
     gutters: {
       paddingLeft: theme.spacing(2),
@@ -134,7 +129,7 @@ export default function Navbar(props: any) {
     portfolio: false,
     contact: false,
   });
-  //whenever the user scrolls or gets scrolled to a compononet with a ref thats been passed in here - update the state with the boolean value 
+  //whenever the user scrolls or gets scrolled to a compononet with a ref thats been passed in here - update the state with the boolean value
   useEffect(() => {
     setActiveTab({
       about: props.props.isFirstVisible,

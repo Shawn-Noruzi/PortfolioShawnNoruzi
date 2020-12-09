@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: `50px`,
     },
     title: {
-      font: `24px 'PrbuttonoximaNovaSbold', Arial`,
+      font: `24px 'GothamBold', Arial`,
       letterSpacing: `5px`,
       color: ` #333`,
       margin: `0 auto`,

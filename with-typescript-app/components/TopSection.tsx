@@ -30,20 +30,20 @@ const useStyles = makeStyles((theme: Theme) =>
       color: "white",
       paddingTop: `3px`,
       fontFamily:
-        "Roboto,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen-Sans,Ubuntu,Cantarell,'Helvetica Neue',sans-serif",
-      [theme.breakpoints.up("sm")]: {
+        "GothamBold",
+        [theme.breakpoints.up("sm")]: {
         letterSpacing: "10px",
       },
     },
     subTitle: {
       color: "white",
       textAlign: `center`,
-      fontFamily: `ProximaNovaExCn-Semibold, Arial`,
+      fontFamily: `GothamBold`,
     },
     scrollText: {
       color: "white",
       textAlign: `center`,
-      fontFamily: `ProximaNovaExCn-Semibold, Arial`,
+      fontFamily: `GothamBold`,
       position: "absolute",
       top: `90%`,
     },
@@ -136,7 +136,7 @@ const TopSection = (props: any) => {
           <div className={classes.TopSectionText}>
             <div className={classes.nameContainer}>
               <Fade in={active} timeout={3000}>
-                <p style={{ marginTop: `8px` }} className={classes.title}>
+                <p style={{ marginTop: `14px` }} className={classes.title}>
                   SHAWN
                 </p>
               </Fade>
@@ -145,9 +145,16 @@ const TopSection = (props: any) => {
               </Fade>
             </div>
             <Fade in={active} timeout={4000}>
+              <div>
               <p className={classes.subTitle}>
-                Front End Developer | UX and UI Designer
+                Front End Developer
               </p>
+              <p className={classes.subTitle}>
+              UX and UI Designer
+              </p>
+              </div>
+
+   
             </Fade>
             <Fade in={active} timeout={6000}>
               <div className={classes.scrollContainer}>

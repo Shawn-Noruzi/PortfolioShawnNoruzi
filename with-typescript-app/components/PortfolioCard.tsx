@@ -7,24 +7,16 @@ import { jobData } from "../utils/PortfolioData";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     contentContainer: { display: `flex` },
-    imageContainer: {},
     title: {
-      font: ` 45px/130% 'HelveticaNeue_Light', Arial`,
+      font: ` 34px/130% 'GothamBold', Arial`,
       color: ` #333`,
       width: `60%`,
       textDecoration: "underline",
     },
-    subTitle: {
-      font: ` 45px/130% 'HelveticaNeue_Light', Arial`,
-      color: ` #333`,
-      margin: `0 auto`,
-      maxWidth: `750px`,
-      paddingTop: `15px`,
-    },
     text: {
       color: "#333",
       marginLeft: `30px`,
-      font: `16px/34px 'HelveticaNeue_Thin', Arial`,
+      font: `16px/34px 'Baskerville', Arial`,
       width: `450px`,
       textDecoration: "unset",
       [theme.breakpoints.down("sm")]: {
@@ -106,6 +98,7 @@ const PortfolioCard = (props: any) => {
                       color: "#907c7c",
                       fontSize: "small",
                       marginLeft: "10px",
+                      fontFamily: 'Gotham'
                     }}
                   >
                     {key[1].tech}

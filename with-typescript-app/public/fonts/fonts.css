@@ -12,3 +12,18 @@
     font-family: 'HelveticaNeue_Light';
     src: url('helvetica-neue-lt-com-45-light.ttf');
 }
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('Metropolis-Light.otf');
+}
+
+@font-face {
+    font-family: 'GothamBold';
+    src: url('iCiel\ Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Baskerville';
+    src: url('baskvl.ttf');
+}

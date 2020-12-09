@@ -12,20 +12,8 @@ import Grow from "@material-ui/core/Grow";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    text: {
-      color: "white",
-      width: "400px",
-      marginLeft: "80px",
-      fontWeight: "normal",
-      fontSize: "medium",
-      fontFamily: "HelveticaNeue_Thin, Arial",
-
-      [theme.breakpoints.down("sm")]: {
-        marginLeft: "5px",
-      },
-    },
     title: {
-      font: `24px 'ProximaNovaSbold', Arial`,
+      font: `24px 'GothamBold', Arial`,
       letterSpacing: `5px`,
       color: `#333`,
       margin: `0 auto`,
@@ -59,17 +47,17 @@ const useStyles = makeStyles((theme: Theme) =>
     card: {
       minWidth: 275,
       margin: "20px",
-      background: `#295583`,
+      background: `rgba(18, 67, 117, 0.83)`,
 
-      boxShadow: `2px 2px 6px 0px black`,
+      boxShadow: `0px 5px 8px 1px #0000004d`,
     },
-    cardTitle: { fontFamily: "HelveticaNeue_Thin, Arial" },
+    cardTitle: { fontFamily: "GothamBold" },
     ".MuiCardContent-root": {
       textAlign: "center",
     },
     links: {
       textDecoration: `none`,
-      fontFamily: "HelveticaNeue_Thin, Arial",
+      fontFamily: "GothamBold",
       margin: "20px",
       "&:visited": { color: `#ffffff` },
       "&:hover": { color: `#a2e9ff` },

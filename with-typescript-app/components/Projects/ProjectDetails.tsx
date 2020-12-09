@@ -12,19 +12,19 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: "left",
       color: "#333",
       width: ` 70%`,
-      font: `16px/34px 'HelveticaNeue_Thin', Arial`,
+      font: `16px/34px 'Gotham', Arial`,
       [theme.breakpoints.down("md")]: {
         width: `unset`,
       },
     },
  
     header: {
-      font: `24px 'ProximaNovaSbold', Arial`,
+      font: `24px 'GothamBold', Arial`,
       letterSpacing: `5px`,
     },
 
     headerViewSite: {
-      font: `24px 'ProximaNovaSbold', Arial`,
+      font: `24px 'GothamBold', Arial`,
       letterSpacing: `5px`,
       marginRight: `100px`,
       textDecoration: `none`,
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: `center`,
       padding: `15px`,
       margin: `8px`,
-      fontFamily: "HelveticaNeue_Light",
+      fontFamily: "Gotham",
       boxShadow: `0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)`,
     },
     techContainer: {
