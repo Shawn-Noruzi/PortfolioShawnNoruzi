@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: "left",
       color: "#333",
       width: "300px",
-      margin: `30px 20px 20px 20px`,
-      height: `150px`,
+      margin: `30px 0px 20px 20px`,
+      height: `250px`,
       font: `17px/34px 'Baskerville', Arial`,
       [theme.breakpoints.down("lg")]: {
         width: "300px",
@@ -157,16 +157,10 @@ export default function AboutMe() {
               <div>
                 <p className={classes.text}>
                   I've lived and gone to school in B.C. Canada and I have a cat
-                  named Oscar, the prince of purrsia. I spend a lot of my time
-                  teaching (programming, math, anything inbetween) - I find
+                  named Oscar, who is the prince of purrsia. I spend a lot of my time
+                  teaching front end skills or math - I find
                   myself having the most fun helping others grow.
-                  My main objective is to bring my expertise of high end and
-                  modern web design and engineering together with my client's
-                  needs to create purposeful branding and a product that truly
-                  stands out.
                 </p>
-
-
               </div>
             </Grow>
           </div>
@@ -185,12 +179,10 @@ export default function AboutMe() {
                 <p className={classes.text}>
                   From new design patterns to new tools - there's always
                   something that keeps my interest in this line of work and its
-                  one of the main reasons I chose to get into it.
-                </p>
-                <p className={classes.text}>
-                  Outside of web development you can find me making educational
-                  content, playing rugby, or reading up on politics, psychology
-                  and health science.
+                  one of the main reasons I chose to get into it. Outside of web
+                  development you can find me making educational content,
+                  playing rugby, or reading up on politics, psychology and
+                  health science.
                 </p>
               </div>
             </Grow>
