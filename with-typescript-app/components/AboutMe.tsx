@@ -184,8 +184,7 @@ export default function AboutMe() {
                   something that keeps my interest in this line of work and its
                   one of the main reasons I chose to get into it. Outside of web
                   development you can find me making educational content,
-                  playing rugby, or reading up on politics, psychology and
-                  health science.
+                  playing rugby, indulging in toxic league matches or finding ways to cook up a gourmet mac and cheese.
                 </p>
               </div>
             </Grow>
