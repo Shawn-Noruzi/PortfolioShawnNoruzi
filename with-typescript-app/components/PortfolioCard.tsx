@@ -84,7 +84,11 @@ const PortfolioCard = (props: any) => {
         if (key[1].tags.all == true && props.skills.all == true) {
           return (
             <Grow in={props.checked} key={index}>
-              <Link href="/projects/[id]" as={`/projects/${key[0]}`} passHref>
+              <Link
+                href="/projects/[id]"
+                as={`/projects/${key[0]}`}
+                scroll={false}
+              >
                 <div className={classes.portfolioCard}>
                   <div className={classes.picture}>
                     <img
@@ -98,7 +102,7 @@ const PortfolioCard = (props: any) => {
                       color: "#907c7c",
                       fontSize: "small",
                       marginLeft: "10px",
-                      fontFamily: 'Gotham'
+                      fontFamily: "Gotham",
                     }}
                   >
                     {key[1].tech}
@@ -120,22 +124,37 @@ const PortfolioCard = (props: any) => {
           if (key[1].tags.fullstack == true) {
             return (
               <Grow in={props.checked} key={index}>
-                <div className={classes.portfolioCard}>
-                  <div className={classes.picture}>
-                    <img
-                      className={classes.img}
-                      alt="picture of site"
-                      src={key[1].images[0]}
-                    />
-                  </div>
-                  <p style={{ color: "#907c7c", fontSize: "small" }}>Website</p>
-                  <div className={classes.contentContainer}>
-                    <div className={classes.titleContainer}>
-                      <span className={classes.title}>{key[1].title}</span>
-                      <span className={classes.text}> {key[1].catchLine} </span>
+                <Link
+                  href="/projects/[id]"
+                  as={`/projects/${key[0]}`}
+                  scroll={false}
+                >
+                  <div className={classes.portfolioCard}>
+                    <div className={classes.picture}>
+                      <img
+                        className={classes.img}
+                        alt="picture of site"
+                        src={key[1].images[0]}
+                      />
+                    </div>
+                    <p
+                      style={{
+                        color: "#907c7c",
+                        fontSize: "small",
+                        marginLeft: "10px",
+                        fontFamily: "Gotham",
+                      }}
+                    >
+                      {key[1].tech}
+                    </p>
+                    <div className={classes.contentContainer}>
+                      <div className={classes.titleContainer}>
+                        <span className={classes.title}>{key[1].title}</span>
+                        <span className={classes.text}>{key[1].catchLine}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </Grow>
             );
           }
@@ -146,22 +165,37 @@ const PortfolioCard = (props: any) => {
           if (key[1].tags.frontend == true) {
             return (
               <Grow in={props.checked} key={index}>
-                <div className={classes.portfolioCard}>
-                  <div className={classes.picture}>
-                    <img
-                      className={classes.img}
-                      alt="picture of site"
-                      src={key[1].images[0]}
-                    />
-                  </div>
-                  <p style={{ color: "#907c7c", fontSize: "small" }}>Website</p>
-                  <div className={classes.contentContainer}>
-                    <div className={classes.titleContainer}>
-                      <span className={classes.title}>{key[1].title}</span>
-                      <span className={classes.text}> {key[1].catchLine} </span>
+                <Link
+                  href="/projects/[id]"
+                  as={`/projects/${key[0]}`}
+                  scroll={false}
+                >
+                  <div className={classes.portfolioCard}>
+                    <div className={classes.picture}>
+                      <img
+                        className={classes.img}
+                        alt="picture of site"
+                        src={key[1].images[0]}
+                      />
+                    </div>
+                    <p
+                      style={{
+                        color: "#907c7c",
+                        fontSize: "small",
+                        marginLeft: "10px",
+                        fontFamily: "Gotham",
+                      }}
+                    >
+                      {key[1].tech}
+                    </p>
+                    <div className={classes.contentContainer}>
+                      <div className={classes.titleContainer}>
+                        <span className={classes.title}>{key[1].title}</span>
+                        <span className={classes.text}>{key[1].catchLine}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </Grow>
             );
           }
