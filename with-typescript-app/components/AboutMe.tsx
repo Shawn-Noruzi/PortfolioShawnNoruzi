@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: "left",
       color: "#333",
       width: "300px",
-      margin: `30px 0px 20px 20px`,
-      height: `250px`,
+      margin: `30px 20px 20px 20px`,
+      height: `fit-content`,
       font: `17px/34px 'Baskerville', Arial`,
       [theme.breakpoints.down("lg")]: {
         width: "300px",
@@ -131,7 +131,7 @@ export default function AboutMe() {
               <div className={classes.bar} />
             </Grow>
             <Grow in={active} timeout={3000}>
-              <div>
+              <div style={{paddingLeft:'40px'}}>
                 <p className={classes.text}>
                   I have a Computer Science and Mathematics educational
                   background, team lead experience, and a plethora of projects
@@ -154,12 +154,16 @@ export default function AboutMe() {
             </Grow>
 
             <Grow in={active} timeout={4600}>
-              <div>
+              <div style={{paddingLeft:'40px'}}>
                 <p className={classes.text}>
                   I've lived and gone to school in B.C. Canada and I have a cat
                   named Oscar, who is the prince of purrsia. I spend a lot of my time
                   teaching front end skills or math - I find
-                  myself having the most fun helping others grow.
+                  myself having the most fun helping others grow. My main
+                  objective is to bring my expertise of high end and modern web
+                  design and engineering together with my client's needs to
+                  create purposeful branding and a product that truly stands
+                  out.
                 </p>
               </div>
             </Grow>
@@ -175,7 +179,7 @@ export default function AboutMe() {
             </Grow>
 
             <Grow in={active} timeout={5700}>
-              <div>
+              <div style={{paddingLeft:'40px'}}>
                 <p className={classes.text}>
                   From new design patterns to new tools - there's always
                   something that keeps my interest in this line of work and its
