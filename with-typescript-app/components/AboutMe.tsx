@@ -9,13 +9,12 @@ const useStyles = makeStyles((theme: Theme) =>
     text: {
       textAlign: "left",
       color: "#333",
-      width: "390px",
+      width: "300px",
       margin: `30px 20px 20px 20px`,
       height: `150px`,
       font: `17px/34px 'Baskerville', Arial`,
       [theme.breakpoints.down("lg")]: {
-
-        width: "340px",
+        width: "300px",
       },
       [theme.breakpoints.down("md")]: {
         margin: ` 0 auto`,
@@ -96,7 +95,6 @@ export default function AboutMe() {
     <VizSensor
       partialVisibility
       onChange={(isVisible) => {
-
         if (active && hasBeenVisible) {
           return;
         }
@@ -105,7 +103,6 @@ export default function AboutMe() {
         setHasBeenVisible(true);
       }}
       active={hasBeenVisible ? !active : true}
-    
     >
       <div id={"About"} className={classes.container}>
         <Fade in={active} timeout={2000}>
@@ -138,12 +135,10 @@ export default function AboutMe() {
                 <p className={classes.text}>
                   I have a Computer Science and Mathematics educational
                   background, team lead experience, and a plethora of projects
-                  focused on front end skill development.
-                </p>
-                <p className={classes.text}>
-                  I've built a bounty web app for developers to find work, a
-                  geolocation based constituent consulting app and a tinder-like
-                  mentor finding app.
+                  focused on front end skill development. I've built a bounty
+                  web app for developers to find work, a geolocation based
+                  constituent consulting app and a tinder-like mentor finding
+                  app.
                 </p>
               </div>
             </Grow>
@@ -165,14 +160,13 @@ export default function AboutMe() {
                   named Oscar, the prince of purrsia. I spend a lot of my time
                   teaching (programming, math, anything inbetween) - I find
                   myself having the most fun helping others grow.
-                </p>
-                <div className={classes.spacer}></div>
-                <p className={classes.text}>
                   My main objective is to bring my expertise of high end and
                   modern web design and engineering together with my client's
                   needs to create purposeful branding and a product that truly
                   stands out.
                 </p>
+
+
               </div>
             </Grow>
           </div>
