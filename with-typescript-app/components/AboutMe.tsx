@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: `30px 20px 20px 20px`,
       height: `150px`,
       font: `17px/34px 'Baskerville', Arial`,
+      [theme.breakpoints.down("lg")]: {
+
+        width: "340px",
+      },
       [theme.breakpoints.down("md")]: {
         margin: ` 0 auto`,
         marginTop: ` 30px`,
