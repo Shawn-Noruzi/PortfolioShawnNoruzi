@@ -82,6 +82,7 @@ const PortfolioCard = (props: any) => {
     <>
       {Object.entries(jobData).map((key, index) => {
         if (key[1].tags.all == true && props.skills.all == true) {
+          console.log("key ", key)
           return (
             <Grow in={props.checked} key={index}>
               <Link

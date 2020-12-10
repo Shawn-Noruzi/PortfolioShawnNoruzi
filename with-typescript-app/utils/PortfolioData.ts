@@ -54,6 +54,28 @@ export type PortfolioData = {
     images: string[];
     tech: string;
   };
+  social: {
+    tags: {
+      all: boolean;
+      frontend: boolean;
+      fullstack: boolean;
+    };
+    title: string;
+    catchLine: string;
+    images: string[];
+    tech: string;
+  };
+  expense: {
+    tags: {
+      all: boolean;
+      frontend: boolean;
+      fullstack: boolean;
+    };
+    title: string;
+    catchLine: string;
+    images: string[];
+    tech: string;
+  };
 };
 
 export const jobData: PortfolioData = {
@@ -115,7 +137,29 @@ export const jobData: PortfolioData = {
     tech: "React, Material-UI, Awesome-Slider API, Next.js",
   },
 
+  social: {
+    tags: {
+      all: true,
+      frontend: true,
+      fullstack: true,
+    },
+    title: "Shower Thoughts",
+    catchLine: "Twitter-like social post app",
+    images: ["/static/images/Soc1.PNG"],
+    tech: "React, Redux,  Material-UI, Node.js, Firebase",
+  },
 
+  expense: {
+    tags: {
+      all: true,
+      frontend: true,
+      fullstack: true,
+    },
+    title: "Expense Tracker",
+    catchLine: "Track spending habits",
+    images: ["/static/images/Exp1.PNG"],
+    tech: "React, Redux, SCSS, JEST, Webpack/Babel, Heroku",
+  },
 };
 
 interface items {
@@ -367,7 +411,8 @@ export const Projects: ProjectData = [
         img: "/static/images/Port4.PNG",
         header: "Site Analytics",
         text:
-          "I initially planned to use google analytics to track user web and mobile usage until I found out Next's Vercel web app provides native analytics support."},
+          "I initially planned to use google analytics to track user web and mobile usage until I found out Next's Vercel web app provides native analytics support.",
+      },
     ],
     techSkills: ["React", "Next.js", "TypeScript", "Material-UI", "SWR"],
     summary:
@@ -386,5 +431,83 @@ export const Projects: ProjectData = [
     date: "2020",
     nextProject: "placespeak",
     nextProjectTitle: "PlaceSpeak",
+  },
+  {
+    id: "social",
+    title: "Shower Thoughts",
+    client: "Self Project",
+    content: [
+      {
+        img: "/static/images/Soc1.PNG",
+        header: "Features",
+        text:
+          "User Authentication through tokens, middleware and private routes, Image uploading, CRUD'ing data, notifications through firebase subscriptions, Redux to handle data and project state management, and firebase deployment.",
+      },
+      {
+        img: "/static/images/Soc2.PNG",
+        header: "",
+        text: "",
+      },
+    ],
+    techSkills: [
+      "React",
+      "Redux",
+      "Material-UI",
+      "Firebase",
+      "JEST",
+      "Webpack",
+    ],
+    summary:
+      "Full stack Twitter-clone where users can CRUD data, comment and rate each other. Served as a project to learn how to set up a backend, frontend with testing and bundling optimizations.",
+    website: "https://socialapp-4c8c3.firebaseapp.com/",
+    catchLine: "See everyone's shower thoughts",
+    role: "Front End Engineer",
+    jobDescription: [
+      "Created with React/Redux, Material-UI , Firebase, Express, Node.js – features RESTful consumption, user login with authentication, image uploads, cloud functions, notifications, deployment to Firebase ",
+      "Leveraged the concept of loose coupling for high cohesion using React and Redux to allow for the least amount of component reliance and most defined task contribution",
+    ],
+    images: ["/static/images/Soc1.PNG", "/static/images/Soc2.PNG"],
+    date: "2019",
+    nextProject: "expense",
+    nextProjectTitle: "Expense Tracker",
+  },
+
+  {
+    id: "expense",
+    title: "Expense Tracker",
+    client: "Self Project",
+    content: [
+      {
+        img: "/static/images/Exp1.PNG",
+        header: "",
+        text: "",
+      },
+      {
+        img: "/static/images/Exp2.PNG",
+        header: "",
+        text: "",
+      },
+    ],
+    techSkills: [
+      "React",
+      "Redux",
+      "SCSS",
+      "Firebase",
+      "Enzyme",
+      "JEST",
+      "Webpack",
+    ],
+    summary:
+      "Expense tracker where a user can CRUD data, search through them by date, and sort  by amount or date",
+    website: "https://socialapp-4c8c3.firebaseapp.com/",
+    catchLine: "See everyone's shower thoughts",
+    role: "Front End Engineer",
+    jobDescription: [
+      "Created with React/Redux, Firebase, tested with JEST and Enzyme, SCSS, built with Webpack and Babel for optimization and cross browser support, and deployed on Heroku",
+    ],
+    images: ["/static/images/Exp1.PNG", "/static/images/Exp2.PNG"],
+    date: "2019",
+    nextProject: "social",
+    nextProjectTitle: "Shower Thoughts",
   },
 ];
