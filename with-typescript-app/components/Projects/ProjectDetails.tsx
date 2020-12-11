@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Slide from "@material-ui/core/Slide";
 import VizSensor from "react-visibility-sensor";
+import Link from "@material-ui/core/Link";
 
 //custom mui styling for mui icon - root then class name apply - look @ arrow icon
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-
-
     text: {
       textAlign: "left",
       color: "#333",
@@ -17,24 +16,81 @@ const useStyles = makeStyles((theme: Theme) =>
         width: `unset`,
       },
     },
- 
+
     header: {
       font: `24px 'GothamBold', Arial`,
       letterSpacing: `5px`,
     },
-
     headerViewSite: {
       font: `24px 'GothamBold', Arial`,
       letterSpacing: `5px`,
       marginRight: `100px`,
       textDecoration: `none`,
+
+      display: `block`,
+      width: `150px`,
+      lineHeight: `40px`,
+      textAlign: `center`,
+      position: `relative`,
+      color: `#fff`,
+      fontSize: `15px`,
+      textTransform: `uppercase`,
+
+      "&:before": {
+        borderBottom: `2px solid #202329`,
+        borderLeft: `2px solid #202329`,
+        
+        width: `10%`,
+        height: `33%`,
+        left: `-10px`,
+        bottom: `-10px`,
+      },
+
+      "&:after": {
+        borderTop: `2px solid #202329`,
+        borderRight: `2px solid #202329`,
+        width: `10%`,
+        height: `33%`,
+        top: `-10px`,
+        right: `-10px`,
+      },
+
+      "&:before, &:after": {
+        position: "absolute",
+        content: '""',
+        transition: `all .25s`,
+      },
+      "&:link":{
+        color: "#202329",
+      },
+      "&:visited": {
+        color: "#202329",
+      },
+      "&:hover": {
+        "&:before": {
+          width: `112%`,
+          height: ` 140%`,
+        },
+
+        "&:after": {
+          width: `112%`,
+          height: ` 140%`,
+        },
+      },
     },
+
     spacingViewSite: {
-      paddingTop: "30px",
+      paddingTop: "35px",
+      marginLeft: `40px`,
+      [theme.breakpoints.down("sm")]:{
+        margin: `0 auto`,
+        paddingTop: `56px`,
+        paddingBottom: `35px`,
+      }
     },
     headerContainer: {
       display: "flex",
-      marginBottom: "20px",
+      marginBottom: '40px',
 
       [theme.breakpoints.down("md")]: {
         width: "330px",
@@ -50,7 +106,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     button: {
-      background: `grey`,
+      background: `#202329`,
       color: `white`,
       borderRadius: `5px`,
       width: `150px`,
@@ -64,7 +120,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       marginBottom: `75px`,
       marginTop: `20px`,
-      width: `400px`,
+      width: `auto`,
       flexWrap: `wrap`,
       [theme.breakpoints.down("md")]: {
         width: "330px",
@@ -87,15 +143,18 @@ export default function ProjectDetails(props: any) {
     >
       <Slide direction="right" in={active} timeout={1000}>
         <div style={{ paddingLeft: "10px" }}>
-          {props.data.website != "" ? (
-            <div className={classes.spacingViewSite}>
-              <a className={classes.headerViewSite} href={props.data.website}>
-                View Site
-              </a>
-            </div>
-          ) : null}
-
           <div className={classes.headerContainer}>
+            {props.data.website != "" ? (
+              <div className={classes.spacingViewSite}>
+                <Link
+                  underline="none"
+                  classes={{ root: classes.headerViewSite }}
+                  href={props.data.website}
+                >
+                  View Site
+                </Link>
+              </div>
+            ) : null}
             <div className={classes.headerContentContainer}>
               <div className={classes.header}>Client</div>
               <div className={classes.text}>{props.data.client}</div>

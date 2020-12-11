@@ -104,7 +104,7 @@ const useStyles = makeStyles((theme: Theme) =>
       left: `0`,
       top: `0`,
 
-      backgroundColor: `rgb(65 199 210 / 90%)`,
+      backgroundColor: `#202329f5`,
       overflowX: `hidden`,
       overflowY: `hidden`,
 

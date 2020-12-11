@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     backgroundImage: {
       background:
-        "linear-gradient( rgb(196 181 255 / 85%), rgb(228 146 222 /  85%)),url(/static/images/mountain.jpg)",
+        "linear-gradient(#32324ad9, rgb(47 48 68 / 85%)), url(/static/images/mountain.jpg)",
 
       height: "100vh",
       backgroundPosition: "center",
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundSize: "cover",
       [theme.breakpoints.up("sm")]: {
         background:
-          "linear-gradient(rgb(196 181 255 /  85%), rgb(146 202 228 /  85%)), url(/static/images/mountain.jpg)",
+          "linear-gradient(#32324ad9, rgb(47 48 68 / 85%)), url(/static/images/mountain.jpg)",
         height: "100vh",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

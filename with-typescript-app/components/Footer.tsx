@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: `flex`,
       flexDirection: `column`,
       alignItems: `center`,
-      background: `rgba(18, 67, 117, 0.90)`,
+      background: `rgb(42 54 74)`,
       [theme.breakpoints.down("md")]: {
         alignItems: "unset",
       },
@@ -102,18 +102,18 @@ export default function Footer() {
           </div>
           <div className={classes.linksContainer}>
             <p className={classes.textFooter}>About The Site</p>
-            <a href="tel:+1 604 704 5402" className={classes.linksFooter}>
+            <a  href="" className={classes.linksFooter}>
               Privacy Policy
             </a>
             <a
               className={classes.linksFooter}
-              href="https://www.linkedin.com/in/shawn-noruzi/"
+              href=""
             >
               Cookie Policy
             </a>
             <a
               className={classes.linksFooter}
-              href="https://github.com/Shawn-Noruzi"
+              href=""
             >
               Terms Of Use
             </a>
