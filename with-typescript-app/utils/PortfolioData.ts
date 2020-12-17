@@ -247,6 +247,38 @@ export type ProjectData = [
     date: string;
     nextProject: string;
     nextProjectTitle: string;
+  },
+  {
+    id: string;
+    client: string;
+    techSkills: string[];
+    content: items[];
+    summary: string;
+    website: string;
+    title: string;
+    catchLine: string;
+    role: string;
+    jobDescription: string[];
+    images: string[];
+    date: string;
+    nextProject: string;
+    nextProjectTitle: string;
+  },
+  {
+    id: string;
+    client: string;
+    techSkills: string[];
+    content: items[];
+    summary: string;
+    website: string;
+    title: string;
+    catchLine: string;
+    role: string;
+    jobDescription: string[];
+    images: string[];
+    date: string;
+    nextProject: string;
+    nextProjectTitle: string;
   }
 ];
 
