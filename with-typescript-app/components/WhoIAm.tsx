@@ -113,7 +113,7 @@ export default function AboutMe() {
                 purrsia. In my free time, I enjoy teaching others front end
                 skills or mathematics - helping others to grow further is one of
                 my passions in life. I also enjoy competitive gaming, rugby or
-                taking time to perfecti the greatest gourmet mac and cheese
+                taking time to perfect the greatest gourmet mac and cheese
                 recipe (a work in progress).
               </p>
             </div>
