@@ -448,7 +448,7 @@ export const Projects: ProjectData = [
     ],
     techSkills: ["React", "Next.js", "TypeScript", "Material-UI", "SWR"],
     summary:
-      "After creating the slider portfolio, I wanted to make something a bit more conventional while also picking up a few new skils - mainly typescript. My focus was on creating a responsive, statically typed, easy to navigate and consume site that would utilize a single source of truth for its data to create many components.",
+      "After creating the slider portfolio, I wanted to make something a bit more conventional while also picking up a few new skils - mainly typescript. I focused on creating a responsive, statically typed, easy to navigate, and consume site that would utilize a single source of truth for its data to create many components.",
     website: "https://portfolio-shawn-noruzi.shawn-noruzi.vercel.app/",
     catchLine: "",
     role: "Front End Engineer",

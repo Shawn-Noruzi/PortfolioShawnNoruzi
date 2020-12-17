@@ -80,27 +80,34 @@ const useStyles = makeStyles((theme: Theme) =>
           height: ` 140%`,
         },
       },
+      [theme.breakpoints.down("md")]:{
+        marginRight: `unset`,
+      },
+      [theme.breakpoints.down("sm")]:{
+        marginRight: `unset`,
+      },
     },
 
     spacingViewSite: {
       paddingTop: "35px",
       marginLeft: `40px`,
-      [theme.breakpoints.down("sm")]:{
+      [theme.breakpoints.down("md")]:{
         margin: `0 auto`,
         paddingTop: `56px`,
         paddingBottom: `35px`,
-      }
+        width: `100%`,
+        display: `flex`,
+        justifyContent: `center`,
+      },
+
     },
     headerContainer: {
       display: "flex",
       marginBottom: '40px',
 
       [theme.breakpoints.down("md")]: {
-        width: "330px",
         display: `flex`,
         flexWrap: `wrap`,
-      },
-      [theme.breakpoints.down("xs")]: {
         justifyContent:"center"
       },
     },
