@@ -56,7 +56,6 @@ const useStyles = makeStyles((theme: Theme) =>
           width: `330px`,
           height: `280px`,
           paddingBottom: `60px`,
-          paddingTop: `20px`,
           margin: `0 auto`,
         },
       },
