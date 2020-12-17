@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: "48px",
         color: "white",
         marginBottom: "0px",
+        marginTop: `50px`,
         [theme.breakpoints.down("xs")]: {
           marginTop: "0px",
         },

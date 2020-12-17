@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       background: "#1b77ba",
       justifyContent: `space-between`,
-      paddingBottom: "105px",
+      paddingTop: `50px`,
+      paddingBottom: `50px`,
       [theme.breakpoints.down("sm")]: {
         height: "600px",
         paddingBottom: "80px",
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "48px",
       color: "white",
       marginBottom: "0px",
-      marginTop: "70px",
+      marginTop: `50px`,
 
       [theme.breakpoints.down("xs")]: {
         marginTop: "unset",
@@ -85,6 +86,8 @@ export default function AboutMe() {
   let [hasBeenVisible, setHasBeenVisible] = useState(false);
   return (
     <VizSensor
+      partialVisibility={true}
+      minTopValue={50}
       onChange={(isVisible) => {
         let count = 0;
         if (active && hasBeenVisible) {

@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontSize: "48px",
         color: "white",
         marginBottom: "0px",
+        marginTop: `50px`
       },
       bannerTwoText: {
         fontFamily: "Roboto",
