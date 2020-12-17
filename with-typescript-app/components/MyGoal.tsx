@@ -109,7 +109,7 @@ export default function AboutMe() {
 
           <Slide direction="left" in={active} timeout={1800}>
             <div className={classes.textLayoutTwo}>
-              <p className={classes.bannerTwoTitle}>My Goal</p>
+              <p className={classes.bannerTwoTitle}>Mission</p>
               <p className={classes.bannerTwoText}>
                 To effectively collaborate with my clients and their needs by
                 bringing my expertise of combining contemporary high-end web
