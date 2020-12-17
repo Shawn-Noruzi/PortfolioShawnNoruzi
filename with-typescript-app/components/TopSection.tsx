@@ -251,7 +251,7 @@ const TopSection = (props: any) => {
                 <img className={classes.image} src="/static/images/gir.png" />
               </Fade>
               <Fade in={active} timeout={3000}>
-                <p className={classes.fontHello}>Hello, I'm Shayan Noruzi</p>
+                <p className={classes.fontHello}>Hello, I'm Shawn Noruzi</p>
               </Fade>
               <Fade in={active} timeout={3500}>
                 <p className={classes.fontFrontEnd}>

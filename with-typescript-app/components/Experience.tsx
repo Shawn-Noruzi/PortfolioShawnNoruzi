@@ -106,10 +106,10 @@ export default function AboutMe() {
             <p className={classes.bannerOneTitle}>Experience</p>
             <p className={classes.bannerOneText}>
               I have a Computer Science and Mathematics educational degree, team
-              leadership experience, created multiple projects specializing in
-              front end skill development. I've collaborated to make projects
-              like a bounty web app for developers to find gig work, a constituent
-              consulting app utilizing geolocalization verification, and an app connecting
+              leadership experience, and worked on multiple projects
+              specializing in front-end skill development. Projects include: a
+              bounty web app for developers to find gig work, a constituent
+              consulting app utilizing geolocalization, and an app connecting
               developers with mentors in the field.
             </p>
           </div>
