@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import NavBar from "./Navbar";
+import NavBar from "../components/navbar";
 import VizSensor from "react-visibility-sensor";
 import Fade from "@material-ui/core/Fade";
 import Link from "@material-ui/core/Link";
