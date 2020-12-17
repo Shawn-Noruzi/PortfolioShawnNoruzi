@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       textDecoration: "none",
-      fontFamily: "Gotham",
+      fontFamily: "Roboto",
       borderLeft: "solid",
       paddingLeft: "10px",
       letterSpacing: "10px",
@@ -36,20 +36,20 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
     linkText: {
-      marginBottom: `20px`,
+      marginBottom: `40px`,
       position: "relative",
       textDecoration: "none",
       color: "white",
       fontWeight: "normal",
       fontSize: "larger",
-      fontFamily: "Gotham",
+      fontFamily: "Roboto",
       "&:hover": {
         transition: "0.3s",
         fontSize: `23px`,
       },
     },
     activeLink: {
-      marginBottom: `20px`,
+      marginBottom: `40px`,
       position: "relative",
       textDecoration: "none",
       color: "white",
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme: Theme) =>
       transition: "0.3s",
       fontSize: `23px`,
 
-      fontFamily: "Gotham",
+      fontFamily: "Roboto",
     },
     gutters: {
       paddingLeft: theme.spacing(2),
@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme: Theme) =>
     appBar: {
       position: `fixed`,
       margin: `20px`,
-      right: "0",
+      right: "-16px",
       zIndex: 1,
     },
     overlay: {

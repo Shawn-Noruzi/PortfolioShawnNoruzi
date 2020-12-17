@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     contentContainer: { display: `flex` },
     title: {
-      font: ` 34px/130% 'GothamBold', Arial`,
+      font: ` 34px/130% 'RobotoBold', Arial`,
       color: ` #333`,
       width: `60%`,
       textDecoration: "underline",
@@ -16,11 +16,14 @@ const useStyles = makeStyles((theme: Theme) =>
     text: {
       color: "#333",
       marginLeft: `30px`,
-      font: `16px/34px 'Baskerville', Arial`,
+      font: `16px/34px 'RobotoLight', Arial`,
       width: `450px`,
       textDecoration: "unset",
       [theme.breakpoints.down("sm")]: {
         width: `300px`,
+      },
+      [theme.breakpoints.down("xs")]: {
+        width: `250px`,
       },
     },
     picture: {
@@ -82,7 +85,6 @@ const PortfolioCard = (props: any) => {
     <>
       {Object.entries(jobData).map((key, index) => {
         if (key[1].tags.all == true && props.skills.all == true) {
-          console.log("key ", key)
           return (
             <Grow in={props.checked} key={index}>
               <Link
@@ -103,7 +105,7 @@ const PortfolioCard = (props: any) => {
                       color: "#907c7c",
                       fontSize: "small",
                       marginLeft: "10px",
-                      fontFamily: "Gotham",
+                      fontFamily: "Roboto",
                     }}
                   >
                     {key[1].tech}
@@ -143,7 +145,7 @@ const PortfolioCard = (props: any) => {
                         color: "#907c7c",
                         fontSize: "small",
                         marginLeft: "10px",
-                        fontFamily: "Gotham",
+                        fontFamily: "Roboto",
                       }}
                     >
                       {key[1].tech}
@@ -184,7 +186,7 @@ const PortfolioCard = (props: any) => {
                         color: "#907c7c",
                         fontSize: "small",
                         marginLeft: "10px",
-                        fontFamily: "Gotham",
+                        fontFamily: "Roboto",
                       }}
                     >
                       {key[1].tech}

@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "large",
       textAlign: `left`,
 
-      fontFamily: "Gotham",
+      fontFamily: "Roboto",
       [theme.breakpoints.down("md")]: {
         margin: "0px",
       },
@@ -25,13 +25,13 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "medium",
       textAlign: `center`,
       paddingBottom: "30px",
-      fontFamily: "Gotham",
+      fontFamily: "Roboto",
     },
     container: {
       display: `flex`,
       flexDirection: `column`,
       alignItems: `center`,
-      background: `rgb(42 54 74)`,
+      background: `rgb(36 39 48)`,
       [theme.breakpoints.down("md")]: {
         alignItems: "unset",
       },
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     linksFooter: {
       textDecoration: `none`,
-      fontFamily: "Gotham",
+      fontFamily: "Roboto",
       paddingTop: `5px`,
       paddingBottom: `5px`,
       paddingLeft: `3px`,

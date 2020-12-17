@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
     linkText: {
-      marginBottom: `20px`,
+      marginBottom: `40px`,
       position: "relative",
       textDecoration: "none",
       color: "white",
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme: Theme) =>
     appBar: {
       position: `fixed`,
       margin: `20px`,
-      right: "0",
+      right: "-16px",
       zIndex: 1,
     },
     overlay: {
@@ -103,7 +103,7 @@ export default function Navbar() {
             style={{
               display: "flex",
               flexDirection: "column",
-              height: "200px",
+              height: "300px",
             }}
           >
 

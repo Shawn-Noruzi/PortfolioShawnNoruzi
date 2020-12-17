@@ -7,13 +7,13 @@ import VizSensor from "react-visibility-sensor";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     headerProject: {
-      font: `24px 'GothamBold', Arial`,
+      font: `24px 'RobotoBold', Arial`,
       letterSpacing: `5px`,
       color: "white",
       marginBottom: `30px`,
     },
     textProject: {
-      font: `21px 'Gotham', Arial`,
+      font: `21px 'Roboto', Arial`,
       lineHeight: 2,
       color: "white",
       whiteSpace: `pre-wrap`
@@ -44,11 +44,8 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
       flexDirection: "column",
       background: "#e6e6e6",
-      padding: "80px",
-      [theme.breakpoints.down("md")]: {
-        padding: "0px",
-        paddingTop: "80px",
-      },
+      padding: "50px",
+
     },
 
     contentTitleTextContainer: {
@@ -59,7 +56,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: `flex`,
       justifyContent: `end`,
       flexDirection: `column`,
-      marginBottom: "75px",
+
     },
 
     background: {

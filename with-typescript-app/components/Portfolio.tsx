@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     button: {
       color: `white`,
-      background: `rgb(18 72 128 / 52%)`,
+      background: `rgb(36 39 48 / 52%)`,
       margin: `10px`,
       " &:hover": {
         background: `rgba(18, 67, 117)`,
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     isActiveButton: {
       color: `white`,
-      background: `rgba(18, 67, 117, 0.90)`,
+      background: `rgb(36 39 48)`,
       margin: `10px`,
       " &:hover": {
         boxShadow: `2px 4px 10px 0px #888888`,
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: `50px`,
     },
     title: {
-      font: `24px 'GothamBold', Arial`,
+      font: `48px 'RobotoMedium', Arial`,
       letterSpacing: `5px`,
       color: ` #333`,
       margin: `0 auto`,

@@ -13,7 +13,7 @@ import Grow from "@material-ui/core/Grow";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     title: {
-      font: `24px 'GothamBold', Arial`,
+      font: `48px 'RobotoMedium', Arial`,
       letterSpacing: `5px`,
       color: `#333`,
       margin: `0 auto`,
@@ -33,6 +33,12 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center",
       paddingBottom: "80px",
       [theme.breakpoints.down("md")]: {
+        width: `650px`,
+        flexDirection: `row`,
+        flexWrap: `wrap`,
+        margin: `0 auto`,
+      },
+      [theme.breakpoints.down("sm")]: {
         flexDirection: "column",
         width: `300px`,
         margin: `0 auto`,
@@ -47,22 +53,24 @@ const useStyles = makeStyles((theme: Theme) =>
     card: {
       minWidth: 275,
       margin: "20px",
-      background: `rgb(42 54 74)`,
-
+      background: `rgb(36 39 48)`,
       boxShadow: `0px 5px 8px 1px #0000004d`,
     },
-    cardTitle: { fontFamily: "GothamBold" },
+    cardTitle: { fontFamily: "RobotoBold" },
     ".MuiCardContent-root": {
       textAlign: "center",
     },
     links: {
       textDecoration: `none`,
-      fontFamily: "GothamBold",
+      fontFamily: "RobotoLight",
       margin: "20px",
       "&:visited": { color: `#ffffff` },
       "&:hover": { color: `#a2e9ff` },
       "&:active": { color: `#a2e9ff` },
       "&:link": { color: `#ffffff` },
+      [theme.breakpoints.down("sm")]: {
+        margin: "unset",
+      },
     },
   })
 );

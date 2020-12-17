@@ -27,11 +27,12 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       [theme.breakpoints.down("sm")]: {
         width: "350px",
+        margin: "unset",
       },
     },
 
     title: {
-      font: ` 45px/130% 'GothamBold', Arial`,
+      font: ` 45px/130% 'RobotoBold', Arial`,
       color: ` #333`,
       maxWidth: `750px`,
       padding: `55px 0px 0px`,
@@ -56,7 +57,7 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: "left",
       color: "#333",
 
-      font: `16px/34px 'Gotham', Arial`,
+      font: `16px/34px 'Roboto', Arial`,
       [theme.breakpoints.down("md")]: {
         width: `unset`,
       },
@@ -87,9 +88,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     navButtons: {
       display: "flex",
+      paddingTop: `100px`,
+      background: `#e6e6e6`,
     },
     navTextLeft: {
-      font: ` 45px/130% 'GothamBold', Arial`,
+      font: ` 45px/130% 'RobotoBold', Arial`,
       color: ` #333`,
       width: "50%",
       padding: `55px 0px 55px`,
@@ -106,7 +109,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     navTextRight: {
-      font: ` 45px/130% 'GothamBold', Arial`,
+      font: ` 45px/130% 'RobotoBold', Arial`,
       color: ` #333`,
       width: "50%",
       padding: `55px 0px 55px`,
@@ -122,7 +125,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     footer: {
-      font: "16px/34px 'GothamBold', Arial",
+      font: "16px/34px 'RobotoBold', Arial",
       background: "rgb(32, 35, 41)",
       margin: "0 auto",
       color: "white",

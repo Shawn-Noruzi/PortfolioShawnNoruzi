@@ -11,18 +11,18 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: "left",
       color: "#333",
       width: ` 73%`,
-      font: `16px/34px 'Gotham', Arial`,
+      font: `16px/34px 'Roboto', Arial`,
       [theme.breakpoints.down("md")]: {
         width: `unset`,
       },
     },
 
     header: {
-      font: `24px 'GothamBold', Arial`,
+      font: `24px 'RobotoBold', Arial`,
       letterSpacing: `5px`,
     },
     headerViewSite: {
-      font: `24px 'GothamBold', Arial`,
+      font: `24px 'RobotoBold', Arial`,
       letterSpacing: `5px`,
       marginRight: `100px`,
       textDecoration: `none`,
@@ -113,8 +113,11 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: `center`,
       padding: `15px`,
       margin: `8px`,
-      fontFamily: "Gotham",
+      fontFamily: "Roboto",
       boxShadow: `0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)`,
+      [theme.breakpoints.down("xs")]: {
+        width: "120px",
+      },
     },
     techContainer: {
       display: "flex",
@@ -123,7 +126,13 @@ const useStyles = makeStyles((theme: Theme) =>
       width: `auto`,
       flexWrap: `wrap`,
       [theme.breakpoints.down("md")]: {
-        width: "330px",
+        width: "400px",
+      },
+      [theme.breakpoints.down("sm")]: {
+        width: "400px",
+      },
+      [theme.breakpoints.down("xs")]: {
+        width: "340px",
       },
     },
   })
