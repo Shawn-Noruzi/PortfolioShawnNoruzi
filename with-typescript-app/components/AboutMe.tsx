@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
 import Experience from "../components/Experience";
 import MyGoal from "../components/MyGoal";
 import WhoIAm from "../components/WhoIAm";
