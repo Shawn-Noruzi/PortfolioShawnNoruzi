@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme: Theme) =>
     appBar: {
       position: `fixed`,
       margin: `20px`,
-      right: "-16px",
+      right: "-8px",
       zIndex: 1,
     },
     overlay: {

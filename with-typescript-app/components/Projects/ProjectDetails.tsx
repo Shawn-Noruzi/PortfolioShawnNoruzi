@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down("md")]: {
         width: `unset`,
       },
+      [theme.breakpoints.down("xs")]: {
+        textAlign: 'center'
+      },
     },
 
     header: {
@@ -97,12 +100,18 @@ const useStyles = makeStyles((theme: Theme) =>
         display: `flex`,
         flexWrap: `wrap`,
       },
+      [theme.breakpoints.down("xs")]: {
+        justifyContent:"center"
+      },
     },
     headerContentContainer: {
       width: "200px",
       marginTop: "35px",
       [theme.breakpoints.down("md")]: {
         width: "150px",
+      },
+      [theme.breakpoints.down("xs")]: {
+        textAlign: 'center'
       },
     },
     button: {

@@ -26,6 +26,10 @@ const useStyles = makeStyles((theme: Theme) =>
         width: "550px",
       },
       [theme.breakpoints.down("sm")]: {
+        width: "500px",
+        margin: "0 auto",
+      },
+      [theme.breakpoints.down("xs")]: {
         width: "350px",
         margin: "unset",
       },
@@ -35,10 +39,10 @@ const useStyles = makeStyles((theme: Theme) =>
       font: ` 45px/130% 'RobotoBold', Arial`,
       color: ` #333`,
       maxWidth: `750px`,
-      padding: `55px 0px 0px`,
+      padding: `55px 0px 15px`,
       [theme.breakpoints.down("md")]: {
         paddingLeft: "8px",
-        padding: `20px 0px 0px`,
+        padding: `20px 0px 15px`,
       },
     },
 
@@ -70,20 +74,26 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       [theme.breakpoints.down("sm")]: {
         width: `320px`,
-        margin: "0 auto",
+        margin: "unset",
+        marginLeft: "50px",
+      },
+      [theme.breakpoints.down("xs")]: {
+        marginLeft: `20px`,
       },
     },
     textSpacingOverviewContent: {
-      [theme.breakpoints.down("md")]: {
-        width: `280px`,
-      },
+      width: "100%",
     },
     overviewTextContainer: {
       display: "flex",
       alignItems: "baseline",
-      marginLeft: `30px`,
+      marginLeft: `40px`,
       [theme.breakpoints.down("md")]: {
-        marginLeft: `10px`,
+        marginLeft: `40px`,
+      },
+
+      [theme.breakpoints.down("xs")]: {
+        marginLeft: `20px`,
       },
     },
     navButtons: {
