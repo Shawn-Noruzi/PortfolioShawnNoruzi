@@ -8,14 +8,14 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     bannerOne: {
       width: "100%",
-      height: "360px",
+      height: "440px",
       display: "flex",
       background: "#1b77ba",
       justifyContent: `space-between`,
       paddingTop: `50px`,
       paddingBottom: `50px`,
       [theme.breakpoints.down("sm")]: {
-        height: "600px",
+        height: "560px",
         paddingBottom: "80px",
       },
       [theme.breakpoints.down("xs")]: {
