@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
         height: "100%",
         display: "flex",
         justifyContent: `space-between`,
-        background: "#1B77BA",
+        background: "#303a58",
         paddingTop: "50px",
         paddingBottom: "50px",
         [theme.breakpoints.down("sm")]: {

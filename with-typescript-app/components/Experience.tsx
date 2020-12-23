@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
       height: "440px",
       display: "flex",
-      background: "#1b77ba",
+      background: "#303a58",
       justifyContent: `space-between`,
       paddingTop: `50px`,
       paddingBottom: `50px`,
