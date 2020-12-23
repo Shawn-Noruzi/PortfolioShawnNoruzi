@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
     text: {
       textAlign: "left",
       color: "#333",
-      width: ` 73%`,
+
       font: `16px/34px 'Roboto', Arial`,
       [theme.breakpoints.down("md")]: {
         width: `unset`,

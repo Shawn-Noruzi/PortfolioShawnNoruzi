@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: "Roboto",
       fontSize: "24px",
       color: "white",
+      width: `86%`
     },
     bannerOneImg: {
       width: "500px",

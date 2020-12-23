@@ -18,14 +18,14 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     fontHello: {
-      fontSize: "40px",
+      fontSize: "46px",
       margin: "0 auto",
       letterSpacing: "10px",
       color: "white",
       paddingTop: `3px`,
       fontFamily: "Roboto",
       [theme.breakpoints.down("md")]: {
-        fontSize: "24px",
+        fontSize: "26px",
       },
       [theme.breakpoints.down("sm")]: {
         fontSize: "22px",

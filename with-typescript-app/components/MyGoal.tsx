@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
   
         [theme.breakpoints.down("sm")]: {
           height: "380px",
+          paddingBottom: "80px",
         },
         [theme.breakpoints.down("xs")]: {
           flexDirection: "column",
@@ -36,6 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
         fontFamily: "Roboto",
         fontSize: "24px",
         color: "white",
+        width: `86%`
       },
       bannerTwoImg: {
         width: "500px",
