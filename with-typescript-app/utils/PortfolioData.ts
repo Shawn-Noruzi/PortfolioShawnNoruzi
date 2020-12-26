@@ -431,7 +431,7 @@ export const Projects: ProjectData = [
       {
         img: "/static/images/Port2.PNG",
         header: "Features",
-        text: `Viewport visibility - I tried using VizSensor and useVisibility libraries to handle viewport visibility. I found that VizSensor was by far the more practicle and less buggy of the two. The visibility was then reference to the navbar triggering styling changes and also applying animations to each component as the user scrolls down a page.\n\nMapping data - using my own custom API to pull data from a local file, I then mapped and rendered the data. I also took note of how to use getInitialProps and getStaticProps to pull in API data on build rather than request for external API using applications.`,
+        text: `Viewport visibility - I tried using VizSensor and useVisibility libraries to handle viewport visibility. I found that VizSensor was by far the more practicle and less buggy of the two. The visibility was then referenced to the navbar triggering styling changes and also applying animations to each component as the user scrolls down a page.\n\nMapping data - using my own custom API to pull data from a local file, I then mapped and rendered the data. I also took note of how to use getInitialProps and getStaticProps to pull in API data on build`,
       },
       {
         img: "/static/images/Port3.PNG",
