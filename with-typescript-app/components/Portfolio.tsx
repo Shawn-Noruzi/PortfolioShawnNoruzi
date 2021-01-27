@@ -65,14 +65,18 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const Portfolio = () => {
+  const classes = useStyles();
+
   const [skills, setSkills] = useState({
     all: true,
     frontend: false,
     fullstack: false,
   });
-  const classes = useStyles();
+
   let [active, setActive] = useState(true);
+  
   let [hasBeenVisible, setHasBeenVisible] = useState(false);
+
   const [checked, setChecked] = React.useState(true);
   function handleChange(props: any) {
     setChecked(false);
