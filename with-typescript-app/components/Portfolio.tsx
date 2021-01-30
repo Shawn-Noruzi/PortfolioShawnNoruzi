@@ -140,7 +140,7 @@ const Portfolio = () => {
               }
               className={skills.frontend ? classes.isActiveButton : classes.button}
             >
-              Front End
+              Front End 
             </Button>
           </Grow>
 
